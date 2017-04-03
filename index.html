@@ -77,7 +77,7 @@
                     domoic acid, and particulate domoic acid) above certain threshold values, producing an accurate predictive model.</p>
                 <h3>Purpose</h3>
                 <p>The purpose of this project is to develop an Artificial Neural Network which can effectively predict the probability of a Harmful Algal Bloom event occurring in an arbitrary location, given certain data about the water in the region. By
-                    training the network, a model will be produced with the network's final sets of weights and biases of the network, which can be used to quickly forward any input data to recieve ouptput data.</p>
+                    training the network, a model will be produced with the network's final sets of weights and biases of the network, which can be used to quickly forward any input data to receive ouptput data.</p>
                 <h3>Design Criteria</h3>
                 <p>The program mus be able to retrieve sequential marine environment data from a NOAA OPENDAP database, update and train itself in realtime, accurately deterimine the probability of: harmful abundances of high toxicity, domoic acid carrying
                     algae species. Also the web app should facilitate the easy access to the NeurAlgae prediction algorithm for the lay person, in order to increase the response time of municipal utility agencies.</p>
@@ -86,7 +86,7 @@
                     any of the many difficulties associated with machine-learning optimization problems. After experimenting with many different possible ANN varieties, including various activation functions, cost functions, optimization methods, regularization
                     methods, etc. the final design of the ANN made use of entirely sigmoid neurons, the cross-entropy cost function, stochastic gradient descent optimization using back-propagation, and L2 regularization. Another difficulty encountered
                     was the scarcity of complete data to train the network with, which was fully supervised.</p>
-                <h3>Use of Sequential Data Analysis to Improve Regularization</h3>
+                <h3>Use of Sequential Data Analysis to Improve Generalization</h3>
                 <p>An important distinction between this approach and other possible models is the consideration of adjacent data points in the training of the next in a sequential dataset. By examining the probability of neighboring data points in a linear
                     sequential set, the computer is able to retrieve and learn from the probability of an algal bloom from the last timestamp. This results in the network behaving recurrently; that is, the network is able to pass its outputs into its
                     next input matrix, allowing a limited capacity for simulated memory.</p>
@@ -101,9 +101,9 @@
             <article id="analysis">
                 <h2 class="major">Analysis</h2>
                 <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-                <span class="image main"><img src="images/pic07.jpg" alt="" /></span>
+                <h3>Results and analysis</h3>
+                <p>Our neural network model was used to build four separate networks, nn30, nn30r, nn5050, and nn5050r. The networks marked '30' had 30 hidden nodes in one hidden layer, and the '5050' networks had 100 hidden nodes evenly in two hidden layers. The networks without the letter 'r' took our 10 pieces of input data, while the 'r' networks took that and three pieces of past output data, allowing for pseudo-recurrence. The networks were created and trained using two thirds of our dataset, and tested using the remaining third. We used validation techniques to choose the same learning rate and regularization parameters for each network. All four networks trained differently, but they all trained well without overfitting. Each network's error values (the average differences between the network outputs and the output data) went down by orders of magnitude before the cost function minimized.</p>
                 <span class="image main"><img src="images/pic08.jpg" alt="" /></span>
-                <span class="image main"><img src="images/pic09.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic10.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic12.jpg" alt="" /></span>
@@ -111,8 +111,16 @@
                 <span class="image main"><img src="images/pic14.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic15.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic16.jpg" alt="" /></span>
+                <p>When given input data, the trained networks gave output values which were not exactly the same as the given algal bloom probabilities, but were in a close range - which is the optimal result for this problem, since the empirical data can vary so much, a fairly wide margin to account for differences is necessary in the model to prevent overfitting, and yet the model still is able to produce output data that is accurate enough to give a good idea of the algal bloom chances in that region.</p>
                 <span class="image main"><img src="images/pic17.jpg" alt="" /></span>
-                <p>Pending Writing...</p>
+                <span class="image main"><img src="images/pic07.jpg" alt="" /></span>
+                <h3>Conclusion</h3>
+                <p>Our program meets its design criteria by accurately and efficiently predicting the probability of HAB events to within a reasonable error margin. While, of course, the fit of the network is somewhat imprecise, to fit much more would result in overfitting of the empirical and somewhat noisy data. Meanwhile, the output values given are close enough to expected output values that they could be used for the prediction of HABs - not in precise quantities, which is nearly impossible given the complexity of ocean ecosystems, but with enough precision to accurately determine data quickly for a given location, give an estimate of its severity, and allow humans to respond accordingly. Since our prediction takes in 10 data values, it is already an improvement over human methods, since human brains cannot keep track of complex 10-parameter models in their heads.</p>
+                <h3>Next steps</h3>
+                <p>While the progam could not train further using the methods outlined here, there are ways to improve its performance. Most oceanographic data does not measure a complete set of data for our model, and historical data is often limited, so our datasets were on the small side. Much more data would result in a more accurately trained network. Additionally, one of the largest improvements our model could use would be to transition to fully-recurrent networks. These networks are more complicated and would allow our model to better compute the correlations. Finally, our model currently uses inputs of oceanographic data, but if satellite data could be given as a secondary input source, and the network given a classification task, our accuracy could be improved, perhaps even to rival the C-HARM model we used to obtain our datasets (although this would sacrifice some computational efficiency).
+                </p>
+                <h3>Acknowledgements</h3>
+                <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on both formatting issues and geographical data.</p>
             </article>
 
             <!-- Contact -->
@@ -391,7 +399,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
         <!-- Footer -->
         <footer id="footer">
             <p class="copyright">&copy; Atif Mahmud. Design:
-                <a href="github.com/Atif-Mahmud">Visit.</a>
+                <a href="http://github.com/Atif-Mahmud">Visit.</a>
             </p>
         </footer>
 
