@@ -35,12 +35,15 @@
             <nav>
                 <ul>
                     <li><a href="#intro">Intro</a></li>
-                    <li><a href="#design">Design</a></li>
+                    <li><a href="#vision">Vision</a></li>
                     <li><a href="#analysis">Analysis</a></li>
                     <li><a href="#app">App</a></li>
+                    <li><a href="#code">Code</a></li>
+                    <li><a href="#contact">About</a></li>
                     <!--<li><a href="#elements">Elements</a></li>-->
                 </ul>
             </nav>
+
         </header>
 
         <!-- Main -->
@@ -67,8 +70,8 @@
             </article>
 
             <!-- Design -->
-            <article id="design">
-                <h2 class="major">Design</h2>
+            <article id="vision">
+                <h2 class="major">The Vision</h2>
                 <span class="image main"><img src="images/pic02.jpg" alt="" /></span>
                 <h3>Abstract</h3>
                 <p>Algal blooms, the sudden reproduction of microscopic algae or cyanobacteria in water bodies, have recently become a serious ecological issue. These algal blooms, caused by eutrophican, often due to fertilizer runoff, can deplete local
@@ -86,6 +89,8 @@
                     any of the many difficulties associated with machine-learning optimization problems. After experimenting with many different possible ANN varieties, including various activation functions, cost functions, optimization methods, regularization
                     methods, etc. the final design of the ANN made use of entirely sigmoid neurons, the cross-entropy cost function, stochastic gradient descent optimization using back-propagation, and L2 regularization. Another difficulty encountered
                     was the scarcity of complete data to train the network with, which was fully supervised.</p>
+                <span class="image main"><img src="images/pic17.jpg" alt="" /></span>
+                <span class="image main"><img src="images/pic07.jpg" alt="" /></span>
                 <h3>Use of Sequential Data Analysis to Improve Generalization</h3>
                 <p>An important distinction between this approach and other possible models is the consideration of adjacent data points in the training of the next in a sequential dataset. By examining the probability of neighboring data points in a linear
                     sequential set, the computer is able to retrieve and learn from the probability of an algal bloom from the last timestamp. This results in the network behaving recurrently; that is, the network is able to pass its outputs into its
@@ -100,9 +105,33 @@
             <!-- Analysis -->
             <article id="analysis">
                 <h2 class="major">Analysis</h2>
-                <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
+                <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
                 <h3>Results and analysis</h3>
-                <p>Our neural network model was used to build four separate networks, nn30, nn30r, nn5050, and nn5050r. The networks marked '30' had 30 hidden nodes in one hidden layer, and the '5050' networks had 100 hidden nodes evenly in two hidden layers. The networks without the letter 'r' took our 10 pieces of input data, while the 'r' networks took that and three pieces of past output data, allowing for pseudo-recurrence. The networks were created and trained using two thirds of our dataset, and tested using the remaining third. We used validation techniques to choose the same learning rate and regularization parameters for each network. All four networks trained differently, but they all trained well without overfitting. Each network's error values (the average differences between the network outputs and the output data) went down by orders of magnitude before the cost function minimized.</p>
+                <p>Our neural network model was used to build four separate networks, nn30, nn30r, nn5050, and nn5050r. The networks marked '30' had 30 hidden nodes in one hidden layer, and the '5050' networks had 100 hidden nodes evenly in two hidden layers.
+                    The networks without the letter 'r' took our 10 pieces of input data, while the 'r' networks took that and three pieces of past output data, allowing for pseudo-recurrence. The networks were created and trained using two thirds of
+                    our dataset, and tested using the remaining third. We used validation techniques to choose the same learning rate and regularization parameters for each network. All four networks trained differently, but they all trained well without
+                    overfitting. Each network's error values (the average differences between the network outputs and the output data) went down by orders of magnitude before the cost function minimized.</p>
+                <hr>
+                </span><a href="#appendicies" class="button special">Visit Appendicies</a>
+                <hr>
+                <p>When given input data, the trained networks gave output values which were not exactly the same as the given algal bloom probabilities, but were in a close range - which is the optimal result for this problem, since the empirical data can
+                    vary so much, a fairly wide margin to account for differences is necessary in the model to prevent overfitting, and yet the model still is able to produce output data that is accurate enough to give a good idea of the algal bloom chances
+                    in that region.</p>
+                <h3>Conclusion</h3>
+                <p>Our program meets its design criteria by accurately and efficiently predicting the probability of HAB events to within a reasonable error margin. While, of course, the fit of the network is somewhat imprecise, to fit much more would result
+                    in overfitting of the empirical and somewhat noisy data. Meanwhile, the output values given are close enough to expected output values that they could be used for the prediction of HABs - not in precise quantities, which is nearly
+                    impossible given the complexity of ocean ecosystems, but with enough precision to accurately determine data quickly for a given location, give an estimate of its severity, and allow humans to respond accordingly. Since our prediction
+                    takes in 10 data values, it is already an improvement over human methods, since human brains cannot keep track of complex 10-parameter models in their heads.</p>
+                <h3>Next steps</h3>
+                <p>While the progam could not train further using the methods outlined here, there are ways to improve its performance. Most oceanographic data does not measure a complete set of data for our model, and historical data is often limited, so
+                    our datasets were on the small side. Much more data would result in a more accurately trained network. Additionally, one of the largest improvements our model could use would be to transition to fully-recurrent networks. These networks
+                    are more complicated and would allow our model to better compute the correlations. Finally, our model currently uses inputs of oceanographic data, but if satellite data could be given as a secondary input source, and the network given
+                    a classification task, our accuracy could be improved, perhaps even to rival the C-HARM model we used to obtain our datasets (although this would sacrifice some computational efficiency).
+                </p>
+                <h3>Acknowledgements</h3>
+                <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on both formatting issues and
+                    geographical data.</p>
+                <h3 id="appendicies">Appendicies</h3>
                 <span class="image main"><img src="images/pic08.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic10.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
@@ -111,44 +140,33 @@
                 <span class="image main"><img src="images/pic14.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic15.jpg" alt="" /></span>
                 <span class="image main"><img src="images/pic16.jpg" alt="" /></span>
-                <p>When given input data, the trained networks gave output values which were not exactly the same as the given algal bloom probabilities, but were in a close range - which is the optimal result for this problem, since the empirical data can vary so much, a fairly wide margin to account for differences is necessary in the model to prevent overfitting, and yet the model still is able to produce output data that is accurate enough to give a good idea of the algal bloom chances in that region.</p>
-                <span class="image main"><img src="images/pic17.jpg" alt="" /></span>
-                <span class="image main"><img src="images/pic07.jpg" alt="" /></span>
-                <h3>Conclusion</h3>
-                <p>Our program meets its design criteria by accurately and efficiently predicting the probability of HAB events to within a reasonable error margin. While, of course, the fit of the network is somewhat imprecise, to fit much more would result in overfitting of the empirical and somewhat noisy data. Meanwhile, the output values given are close enough to expected output values that they could be used for the prediction of HABs - not in precise quantities, which is nearly impossible given the complexity of ocean ecosystems, but with enough precision to accurately determine data quickly for a given location, give an estimate of its severity, and allow humans to respond accordingly. Since our prediction takes in 10 data values, it is already an improvement over human methods, since human brains cannot keep track of complex 10-parameter models in their heads.</p>
-                <h3>Next steps</h3>
-                <p>While the progam could not train further using the methods outlined here, there are ways to improve its performance. Most oceanographic data does not measure a complete set of data for our model, and historical data is often limited, so our datasets were on the small side. Much more data would result in a more accurately trained network. Additionally, one of the largest improvements our model could use would be to transition to fully-recurrent networks. These networks are more complicated and would allow our model to better compute the correlations. Finally, our model currently uses inputs of oceanographic data, but if satellite data could be given as a secondary input source, and the network given a classification task, our accuracy could be improved, perhaps even to rival the C-HARM model we used to obtain our datasets (although this would sacrifice some computational efficiency).
-                </p>
-                <h3>Acknowledgements</h3>
-                <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on both formatting issues and geographical data.</p>
+            </article>
+
+            <article id="code">
+                <span class="image main"><img src="images/code.jpg" alt=""></span>
+                <h2 class="major">The Code</h2>
             </article>
 
             <!-- Contact -->
             <article id="contact">
-                <h2 class="major">Contact</h2>
-                <form method="post" action="#">
-                    <div class="field half first">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" id="name" />
-                    </div>
-                    <div class="field half">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email" />
-                    </div>
-                    <div class="field">
-                        <label for="message">Message</label>
-                        <textarea name="message" id="message" rows="4"></textarea>
-                    </div>
-                    <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="special" /></li>
-                        <li><input type="reset" value="Reset" /></li>
-                    </ul>
-                </form>
+                <h2 class="major">About Us</h2>
+                <span class="image left"><img src="images/us.jpg" alt=""></span> Hi, in all the rush of Neural Networks and their application in Algal Bloom prediction, we forgot to mention to you who we were! We're Atif and Zach, partners, long-time
+                pals and best friends. We've been in the same class for 7 years and counting and it's been a blast! Our friendship goes way back and so does our love of science. This is our second year doing a joint project and it has been the most fun
+                of all our years of science fair. If you have any questions, comments or concerns feel free to hit us up at any of our socials!
+                <hr>
+                <h4>Atif Mahmud</h4>
+                <p>Personal Email: atifmahmud101@gmail.com <br>School Email: mahma6337@googleapps.wrdsb.ca <br>Cell: (226) 606-9535</p>
                 <ul class="icons">
-                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="#https://twitter.com/Atif_Mahmud101" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#https://www.facebook.com/Atif.A.Mahmud" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#https://www.instagram.com/Atif.A.Mahmud/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#https://github.com/Atif-Mahmud" class="icon fa-github"><span class="label">GitHub</span></a></li>
+                </ul>
+                <h4>Zach Trefler</h4>
+                <p>Personal Email: zmct99@gmail.com <br>School Email: trefz7495@googleapps.wrdsb.ca <br>Cell: (226) 972-0492</p>
+                <ul class="icons">
+                    <li><a href="#https://www.facebook.com/zaki.tref" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#https://github.com/zmct" class="icon fa-github"><span class="label">GitHub</span></a></li>
                 </ul>
             </article>
 
