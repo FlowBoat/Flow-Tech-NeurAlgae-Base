@@ -145,11 +145,6 @@
                 <span class="image main"><img src="images/pic16.jpg" alt="" /></span>
             </article>
 
-            <article id="code">
-                <span class="image main"><img src="images/code.jpg" alt=""></span>
-                <h2 class="major">The Code</h2>
-            </article>
-
             <!-- Contact -->
             <article id="contact">
                 <h2 class="major">About Us</h2>
@@ -187,7 +182,7 @@ NO3 = //Molar concentration of nitrate in water
 fO2 = //Fractional concentration of oxygen in water
 PS = //Sea water practical salinity
 TU = //Water turbidity
-[[SL], [WP], [CH], [WT], [EC], [O2], [NO3], [fO2], [PS], [TU]]</code></pre>
+[SL, WP, CH, WT, EC, O2, NO3, fO2, PS, TU]</code></pre>
                 <form action="">
                     <div class="field">
                         <label for="inMatrix1">Input Parameter Matrix</label>
@@ -197,9 +192,9 @@ TU = //Water turbidity
                 <h3>Select output type</h3>
                 <ul class="actions" style="width: %100">
                     <div style="text-align: center">
-                        <li><a onclick="pn1()" class="button special">Pseudo Nitzschia</a></li>
-                        <li><a onclick="da1()" class="button special">Domic acid</a></li>
-                        <li><a onclick="pda1()" class="button special">Pt. Domoic Acid</a></li>
+                        <li><a onclick="PNrequest()" class="button special">Pseudo Nitzschia</a></li>
+                        <li><a onclick="PNrequest()" class="button special">Domic acid</a></li>
+                        <li><a onclick="PNrequest()" class="button special">Pt. Domoic Acid</a></li>
                     </div>
 
                 </ul>
@@ -218,11 +213,11 @@ NO3 = //Molar concentration of nitrate in water
 fO2 = //Fractional concentration of oxygen in water
 PS = //Sea water practical salinity
 TU = //Water turbidity
-[[SL], [WP], [CH], [WT], [EC], [O2], [NO3], [fO2], [PS], [TU]]</code></pre>
+[SL, WP, CH, WT, EC, O2, NO3, fO2, PS, TU]</code></pre>
                 <form action="">
                     <div class="field">
-                        <label for="inMatrix2">Input Sequential Parameter Matrix</label>
                         <textarea name="numb" id="numb" placeholder="Enter the number of data points" rows="1"></textarea>
+                        <br>
                         <label for="inMatrix2">Input Sequential Parameter Matrix</label>
                         <textarea name="inMatrix2" id="inMatrix2" placeholder="Enter your sequential input matrix here" rows="6"></textarea>
                     </div>
@@ -230,9 +225,9 @@ TU = //Water turbidity
                 <h3>Select output type</h3>
                 <ul class="actions" style="width: %100">
                     <div style="text-align: center">
-                        <li><a onclick="pn2()" class="button special">Pseudo Nitzschia</a></li>
-                        <li><a onclick="da2()" class="button special">Domic acid</a></li>
-                        <li><a onclick="pda2()" class="button special">Pt. Domoic Acid</a></li>
+                        <li><a onclick="PNrequest2()" class="button special">Pseudo Nitzschia</a></li>
+                        <li><a onclick="PNrequest2()" class="button special">Domic acid</a></li>
+                        <li><a onclick="PNrequest2()" class="button special">Pt. Domoic Acid</a></li>
                     </div>
 
                 </ul>
@@ -240,46 +235,51 @@ TU = //Water turbidity
                 <hr>
             </article>
             <script type="text/javascript">
-                function initNeurAlgae() {
-                    //retrieving data from .jsons
-                    var request = new XMLHttpRequest();
-                    request.open("GET", "../data/data.json", false);
-                    request.send(null)
-                    var data1 = JSON.parse(request.responseText);
-                    alert(my_JSON_object.result[0]);
+                /*
+                                                                                                                                                                                                                                                function initNeurAlgae() {
+                                                                                                                                                                                                                                                    //retrieving data from .jsons
+                                                                                                                                                                                                                                                    var request = new XMLHttpRequest();
+                                                                                                                                                                                                                                                    request.open("GET", "../data/data.json", false);
+                                                                                                                                                                                                                                                    request.send(null)
+                                                                                                                                                                                                                                                    var data1 = JSON.parse(request.responseText);
+                                                                                                                                                                                                                                                    alert(my_JSON_object.result[0]);
 
-                    //Preparing Synaptic
-                    var Neuron = synaptic.Neuron,
-                        Layer = synaptic.Layer,
-                        Network = synaptic.Network,
-                        Trainer = synaptic.Trainer,
-                        Architect = synaptic.Architect;
+                                                                                                                                                                                                                                                    //Preparing Synaptic
+                                                                                                                                                                                                                                                    var Neuron = synaptic.Neuron,
+                                                                                                                                                                                                                                                        Layer = synaptic.Layer,
+                                                                                                                                                                                                                                                        Network = synaptic.Network,
+                                                                                                                                                                                                                                                        Trainer = synaptic.Trainer,
+                                                                                                                                                                                                                                                        Architect = synaptic.Architect;
 
-                    //For Pseudo Nitzschia quantities
-                    var NeurAlgaePN = new Perceptron(10, 30, 3);
-                    var trainingSetPN = [data1];
-                    var trainingOptions = {
-                        rate .1,
-                        iterations: 20000,
-                        error: .005,
-                        cost: Trainer.cost.CROSS_ENTROPY
-                    }
+                                                                                                                                                                                                                                                    //For Pseudo Nitzschia quantities
+                                                                                                                                                                                                                                                    var NeurAlgaePN = new Perceptron(10, 30, 3);
+                                                                                                                                                                                                                                                    var trainingSetPN = data1;
+                                                                                                                                                                                                                                                    var trainingOptions = {
+                                                                                                                                                                                                                                                        rate .1,
+                                                                                                                                                                                                                                                        iterations: 20000,
+                                                                                                                                                                                                                                                        error: .005,
+                                                                                                                                                                                                                                                        cost: Trainer.cost.CROSS_ENTROPY
+                                                                                                                                                                                                                                                    }
 
-                    NeurAlgae.trainer.trainAsync(trainingSet, trainingOptions)
-                        .then(results => console.log('done!', results));
+                                                                                                                                                                                                                                                    NeurAlgae.trainer.trainAsync(trainingSet, trainingOptions)
+                                                                                                                                                                                                                                                        .then(results => console.log('done!', results));
 
-                    var standalone = NeurAlgae.standalone();
-                }
-                window.onload = initNeurAlgae;
-
+                                                                                                                                                                                                                                                    var standalone = NeurAlgae.standalone();
+                                                                                                                                                                                                                                                }
+                                                                                                                                                                                                                                                window.onload = initNeurAlgae;
+                                                                                                                                                                                                                                                */
 
                 //Get Dom elelement Stuff: inMatrix formated [ , , , , , , , , , , ]
                 function PNrequest() {
-                    input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
-                    document.getElementsByName("outputBox1").value = String(standalone(input));
+                    //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
+                    document.getElementsByName("outputBox1")[0].value = String(Math.random());
                 }
 
-                var output = standalonePN(input);
+                function PNrequest2() {
+                    //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
+                    document.getElementsByName("outputBox2")[0].value = String(Math.random());
+                }
+                //var output = standalonePN(input);
 
 
                 //function LSTM(input, blocks, output) {
@@ -719,6 +719,385 @@ TU = //Water turbidity
                 }
             </script>
             -->
+            <article id="code">
+                <span class="image main"><img src="images/code.jpg" alt=""></span>
+                <h2 class="major">The Code</h2>
+                <p>The NeurAlgae.py program is the heart and soul of the project. The majority of the code is a class defining our neural network. It is meant to be imported into the python interpreter as a library, along with its complementary file Data.py.
+                    You can view the complete NeurAlgae.py code, as well as an explanation of what it does, here on this page, or visit the NeurAlgae GitHub page for all the files used in the project.</p>
+                <a href="#allCode" class="button special">View complete code</a>
+                <a href="https://github.com/FlowBoat/Flow-Tech-NeurAlgae" class="button special">View project on GitHub</a>
+                <p>The first thing the NeurAlgae program does is to declare a class called 'NeuralNet', which defines a neural network. The __init__ function takes in a list of the layer sizes in the network, 'sizes', and creates variables accordingly.</p>
+                <pre><code>class NeuralNet(object):
+    def __init__(self, sizes):
+        #Initialize everything
+        self.nLayers = len(sizes)
+        self.sizes = sizes
+        self.weights = [np.random.randn(y, x) / np.sqrt(x) for x, y in zip(self.sizes[:-1], self.sizes[1:])]
+        self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
+        self.trainCost, self.testCost = [], []
+        self.trainDelta, self.testDelta = [], []</code></pre>
+                <p>The 'nLayers' variable is simply the number of layers in the network, and the 'sizes' variable is the size list mentioned earlier. The 'weights' variable is a list of arrays of random floating-point numbers which correspond to the sizes
+                    of the network - each neuron in one layer is connected by a weight to the neuron in the following layer, so each list element is an array with dimensions equal to the number of neurons in the layers forward and behind. The 'biases'
+                    variable is similar to the weights variable, but instead of each neuron having weights for a whole layer, it only has its own bias, so for a layer there is an array with one bias for each junction of weights (meaning no input biases).
+                    Finally, the 'trainCost', 'testCost', 'trainDelta', and 'testDelta' variables are lists for storing data about the training of the network.</p>
+                <p>The next few functions in the NeuralNet class deal with the propagation of values through the network.</p>
+                <pre><code>def sigmoid(self, z):
+        #Sigmoid neuron activation function
+        return 1 / (1 + np.exp(-z))
+    def sigmoidPrime(self, z):
+        #Derivative of sigmoid function
+        return self.sigmoid(z) * (1 - self.sigmoid(z))
+    def forward(self, a):
+        #Move values forward through network
+        for w, b in zip(self.weights, self.biases):
+            a = self.sigmoid(np.dot(w, a) + b)
+        return a</pre></code>
+                <p>The sigmoid function defines the neural network's activation function as a logistic sigmoid function. This function's graph has an S-like shape, and limits at positive and negative infinity, so for any input the output is a real number
+                    between 0 and 1. The sigmoidPrime function is simply the derivative of the sigmoid function (for those unfamiliar with calculus, this function's value at x is the rate of change of the sigmoid function at that same x-value). And the
+                    forward function propagates the network's inputs through to the outputs: it calculates the output of a neuron by summing the product of its inputs and their corresponding weights, adding the neuron's bias, and applying the sigmoid
+                    function to the result. These simple functions are all it takes to define a neural network (although training it is another matter).</p>
+                <p>The next functions deal with assigning 'costs' to the outputs of the network, which are minimized to train the network:</p>
+                <pre><code>def costfn(self, a, y):
+        #Implement cross-entropy cost function
+        return np.sum(np.nan_to_num(-y * np.log(a) - (1 - y) * np.log(1 - a)))
+    def deltaCost(self, z, a, y):
+        #Simple difference between activation and expected output
+        return (a - y)
+    def totalCost(self, data, lmda):
+        #Sum the cost of passing a dataset forward
+        cost = 0.0
+        for x, y in data:
+            a = self.forward(x)
+            cost += self.costfn(a, y) / len(data)
+        cost += 0.5 * (lmda / len(data)) * sum(np.linalg.norm(w) ** 2 for w in self.weights)
+        return cost
+    def totalDelta(self, data):
+        #Sum the absolute error of passing a dataset forward
+        delta = 0.0
+        for x, y in data:
+            a = self.forward(x)
+            delta += (a - y)
+        delta = delta / len(data)
+        return delta</pre></code>
+                <p>The cross-entropy of a and y is used as the cost function. The benefit of this oven another cost function is the property that the rate of change of the cross-entropy cost with respect to the weights (or rather, the learning rate of the
+                    network) is proportional to the error in the output, a - y, but not proportional to the rate of change of the sigmoid activation function, which approaches zero. The costfn function implements the cross-entropy cost, whereas the deltaCost
+                    function simply returns the difference between the activation and expected outputs. The totalCost and totalDelta functions are used for calculating the costs and errors of passing an entire dataset through the network. The totalCost
+                    function also implements L2 regularization by adding the product of the parameter and the size of all the weights squared to the sum of all the costs.</p>
+                <p>The backprop function is used to compute the gradient of the cost function to use in the gradent descent optimization:</p>
+                <pre><code>def backprop(self, x, y):
+        #Compute gradient of the cost function
+        delw = [np.zeros(w.shape) for w in self.weights]
+        delb = [np.zeros(b.shape) for b in self.biases]
+        activation = x
+        activations = [x]
+        zs = []
+        for w, b in zip(self.weights, self.biases):
+            z = np.dot(w, activation) + b
+            zs.append(z)
+            activation = self.sigmoid(z)
+            activations.append(activation)
+        delta = self.deltaCost(zs[-1], activations[-1], y)
+        delw[-1] = np.dot(delta, np.transpose(activations[-2]))
+        delb[-1] = delta
+        for i in range(2, self.nLayers):
+            z = zs[-i]
+            sp = self.sigmoidPrime(z)
+            delta = np.dot(np.transpose(self.weights[-i + 1]), delta) * sp
+            delw[-i] = np.dot(delta, np.transpose(activations[-i - 1]))
+            delb[-i] = delta
+        return (delw, delb)</pre></code>
+                <p>The del operator in the code represents the gradient as a vector of what it operates on (the sum of the partial derivatives). Delta refers to the difference. This code passes an x-value forward through the network, saving the inputs and
+                    outputs of each neuron as it goes. It then uses these values to calculate gradient vectors for the weights and biases, and then propagates these backwards through the network, assigning each weight and bias with an associated gradient
+                    vector, and returns the list of these vectors.</p>
+                <p>updateMinBat works by backpropagating a smaller set of data than the full dataset (a mini-batch), and using the resulting gradient vectors to change the weights and biases.</p>
+                <pre><code>def updateMinBat(self, minBat, learnRate, lmda, n):
+        #Do gradient descent using backprop to a single mini-batch
+        delw = [np.zeros(w.shape) for w in self.weights]
+        delb = [np.zeros(b.shape) for b in self.biases]
+        for x, y in minBat:
+            deltadelw, deltadelb = self.backprop(x, y)
+            delw = [dw + ddw for dw, ddw in zip(delw, deltadelw)]
+            delb = [db + ddb for db, ddb in zip(delb, deltadelb)]
+        self.weights = [(1 - learnRate * (lmda / n)) * w - (learnRate / len(minBat)) * dw for w, dw in zip(self.weights, delw)] 
+        self.biases = [b - (learnRate / len(minBat)) * db for b, db in zip(self.biases, delb)]</pre></code>
+                <p>For a single mini-batch, each data point is backpropagated, and the resulting gradient vectors summed into two larger gradient vectors delw and delb. The weights of the network are then updated by subtracting the gradient vectors, scaled
+                    by the learning rate parameter and the size of the minibatch</p>
+                <p>The stochastic gradient descent implementation is the basis of training the neural network. It uses gradient descent to minimize the value of the cost function, which results in training being run as an optimization problem.</p>
+                <pre><code>def remindSGD(self):
+        #Remind forgetful programmers how to train network
+        print ("<network>.stochGradDescent(self, train, epochs, minBatSize, learnRate, lmda = 0.0, test = None, monitorTrain = False, monitorTest = False, monitorDelta = False, delay = 0.0)")
+    def stochGradDescent(self, train, epochs, minBatSize, learnRate, lmda = 0.0, test = None, monitorTrain = False, monitorTest = False, monitorDelta = False, delay = 0.0):
+        #Apply gradient descent
+        n = len(train)
+        if test: nTest = len(test)
+        trainCost, testCost = [], []
+        trainDelta, testDelta = [], []
+        train2 = train
+        if len(self.trainCost) == 0:
+            if monitorTrain:
+                cost = self.totalCost(train2, lmda)
+                trainCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(train2)
+                    trainDelta.append(delta)
+                    print("Initial error with training data: {}".format(delta))
+                print("Initial cost with training data: {}".format(cost))
+        if len(self.testCost) == 0:
+            if monitorTest:
+                cost = self.totalCost(test, lmda)
+                testCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(test)
+                    testDelta.append(delta)
+                    print("Initial error with testing data: {}".format(delta))
+                print("Initial cost with testing data: {}".format(cost))
+        for i in range(epochs):
+            random.shuffle(train2)
+            minBats = [train2[j:j + minBatSize] for j in range(0, n, minBatSize)]
+            for minBat in minBats:
+                self.updateMinBat(minBat, learnRate, lmda, len(train2))
+            print("Epoch %s: training complete" % i)
+            if monitorTrain:
+                cost = self.totalCost(train2, lmda)
+                trainCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(train2)
+                    trainDelta.append(delta)
+                    print("Error with training data: {}".format(delta))
+                print("Cost with training data: {}".format(cost))
+            if monitorTest:
+                cost = self.totalCost(test, lmda)
+                testCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(test)
+                    testDelta.append(delta)
+                    print("Error with testing data: {}".format(delta))
+                print("Cost with testing data: {}".format(cost))
+            print
+            time.sleep(delay)
+        self.trainCost += trainCost
+        self.testCost += testCost
+        self.trainDelta += trainDelta
+        self.testDelta += testDelta
+        return trainCost, testCost, trainDelta, testDelta</pre></code>
+                <p>While the stochGradDescent function seems long and complicated, it is really only a means of organizing the other functions that do the optimization work. To apply gradient descent, the function merely shuffles the training data and generates
+                    mini-batches out of it, then passes these mini-batches and the other parameters given to the functions described above. All the rest of the code is simply processes to keep track of the cost and delta values of the network as it is
+                    trained. There is also a helper method, remindSGD, which reminds programmers of all the comlex parameters to keep track of while training the network.</p>
+                <p>Finally, each network is saveable and loadable by writing to/reading from JSON files containing dumps of all the neural network parameters.</p>
+                <pre><code>def save(self, filename):
+        #Save a neural network to a file
+        data = {"sizes": self.sizes,
+                "weights": [w.tolist() for w in self.weights],
+                "biases": [b.tolist() for b in self.biases],
+                "trainCost": self.trainCost,
+                "testCost": self.testCost,
+                "trainDelta": [trd.tolist() for trd in self.trainDelta],
+                "testDelta": [ted.tolist() for ted in self.testDelta]}
+        f = open(filename, "w")
+        json.dump(data, f)
+        f.close()
+def load(filename):
+    #Load a previously created neural network from a file
+    f = open(filename, "r")
+    data = json.load(f)
+    f.close()
+    net = NeuralNet(data["sizes"])
+    net.weights = [np.array(w) for w in data["weights"]]
+    net.biases = [np.array(b) for b in data["biases"]]
+    net.trainCost = data["trainCost"]
+    net.testCost = data["testCost"]
+    net.trainDelta = [np.array(trd) for trd in data["trainDelta"]]
+    net.testDelta = [np.array(ted) for ted in data["testDelta"]]
+    return net</pre></code>
+                <p>Data is saved into a dictionary, formatted into lists, and dumped directly into JSON files. The networks are loaded in the opposite manner, by defining a new NeuralNet object from parameters read from a saved dictionary.</p>
+                <hr>
+                <h3 id="allCode">Complete Code</h3>
+                <pre><code># FlowTech | NeurAlgae
+## 2017 WWSEF Science Fair | HAB Prediction Using Machine Learning Algorithms
+
+#Describes and trains a neural network for the analysis and prediction of algal bloom data
+#Copyright (C) 2017 AH Zachary Trefler and Atif Mahmud
+
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+#If you have comments, questions, concerns, or you just want to say 'hi',
+#email Zachary Trefler at zmct99@gmail.com or Atif Mahmud at atifmahmud101@gmail.com
+
+import json
+import random
+import sys
+import time
+import numpy as np
+#For a network with inputs <a> through <c>, outputs <a> through <b>, and <n> data points
+#Input data in the form [(np.array([[xa1], [xb1], [xc1]]), np.array([[ya1], [yb1]])), (np.array([[xa2], [xb2], [xc2]]), np.array([[ya2], [yb2]])), ... (np.array([[xan], [xbn], [xcn]]), np.array([[yan], [ybn]]))]
+class NeuralNet(object):
+    def __init__(self, sizes):
+        #Initialize everything
+        self.nLayers = len(sizes)
+        self.sizes = sizes
+        self.weights = [np.random.randn(y, x) / np.sqrt(x) for x, y in zip(self.sizes[:-1], self.sizes[1:])]
+        self.biases = [np.random.randn(y, 1) for y in sizes[1:]]
+        self.trainCost, self.testCost = [], []
+        self.trainDelta, self.testDelta = [], []
+    def sigmoid(self, z):
+        #Sigmoid neuron activation function
+        return 1 / (1 + np.exp(-z))
+    def sigmoidPrime(self, z):
+        #Derivative of sigmoid function
+        return self.sigmoid(z) * (1 - self.sigmoid(z))
+    def forward(self, a):
+        #Move values forward through network
+        for w, b in zip(self.weights, self.biases):
+            a = self.sigmoid(np.dot(w, a) + b)
+        return a
+    def costfn(self, a, y):
+        #Implement cross-entropy cost function
+        return np.sum(np.nan_to_num(-y * np.log(a) - (1 - y) * np.log(1 - a)))
+    def deltaCost(self, z, a, y):
+        #Simple difference between activation and expected output
+        return (a - y)
+    def totalCost(self, data, lmda):
+        #Sum the cost of passing a dataset forward
+        cost = 0.0
+        for x, y in data:
+            a = self.forward(x)
+            cost += self.costfn(a, y) / len(data)
+        cost += 0.5 * (lmda / len(data)) * sum(np.linalg.norm(w) ** 2 for w in self.weights)
+        return cost
+    def totalDelta(self, data):
+        #Sum the absolute error of passing a dataset forward
+        delta = 0.0
+        for x, y in data:
+            a = self.forward(x)
+            delta += (a - y)
+        delta = delta / len(data)
+        return delta
+    def backprop(self, x, y):
+        #Compute gradient of the cost function
+        delw = [np.zeros(w.shape) for w in self.weights]
+        delb = [np.zeros(b.shape) for b in self.biases]
+        activation = x
+        activations = [x]
+        zs = []
+        for w, b in zip(self.weights, self.biases):
+            z = np.dot(w, activation) + b
+            zs.append(z)
+            activation = self.sigmoid(z)
+            activations.append(activation)
+        delta = self.deltaCost(zs[-1], activations[-1], y)
+        delw[-1] = np.dot(delta, np.transpose(activations[-2]))
+        delb[-1] = delta
+        for i in range(2, self.nLayers):
+            z = zs[-i]
+            sp = self.sigmoidPrime(z)
+            delta = np.dot(np.transpose(self.weights[-i + 1]), delta) * sp
+            delw[-i] = np.dot(delta, np.transpose(activations[-i - 1]))
+            delb[-i] = delta
+        return (delw, delb)
+    def updateMinBat(self, minBat, learnRate, lmda, n):
+        #Do gradient descent using backprop to a single mini-batch
+        delw = [np.zeros(w.shape) for w in self.weights]
+        delb = [np.zeros(b.shape) for b in self.biases]
+        for x, y in minBat:
+            deltadelw, deltadelb = self.backprop(x, y)
+            delw = [dw + ddw for dw, ddw in zip(delw, deltadelw)]
+            delb = [db + ddb for db, ddb in zip(delb, deltadelb)]
+        self.weights = [(1 - learnRate * (lmda / n)) * w - (learnRate / len(minBat)) * dw for w, dw in zip(self.weights, delw)] 
+        self.biases = [b - (learnRate / len(minBat)) * db for b, db in zip(self.biases, delb)]
+    def remindSGD(self):
+        #Remind forgetful programmers how to train network
+        print ("<network>.stochGradDescent(self, train, epochs, minBatSize, learnRate, lmda = 0.0, test = None, monitorTrain = False, monitorTest = False, monitorDelta = False, delay = 0.0)")
+    def stochGradDescent(self, train, epochs, minBatSize, learnRate, lmda = 0.0, test = None, monitorTrain = False, monitorTest = False, monitorDelta = False, delay = 0.0):
+        #Apply gradient descent
+        n = len(train)
+        if test: nTest = len(test)
+        trainCost, testCost = [], []
+        trainDelta, testDelta = [], []
+        train2 = train
+        if len(self.trainCost) == 0:
+            if monitorTrain:
+                cost = self.totalCost(train2, lmda)
+                trainCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(train2)
+                    trainDelta.append(delta)
+                    print("Initial error with training data: {}".format(delta))
+                print("Initial cost with training data: {}".format(cost))
+        if len(self.testCost) == 0:
+            if monitorTest:
+                cost = self.totalCost(test, lmda)
+                testCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(test)
+                    testDelta.append(delta)
+                    print("Initial error with testing data: {}".format(delta))
+                print("Initial cost with testing data: {}".format(cost))
+        for i in range(epochs):
+            random.shuffle(train2)
+            minBats = [train2[j:j + minBatSize] for j in range(0, n, minBatSize)]
+            for minBat in minBats:
+                self.updateMinBat(minBat, learnRate, lmda, len(train2))
+            print("Epoch %s: training complete" % i)
+            if monitorTrain:
+                cost = self.totalCost(train2, lmda)
+                trainCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(train2)
+                    trainDelta.append(delta)
+                    print("Error with training data: {}".format(delta))
+                print("Cost with training data: {}".format(cost))
+            if monitorTest:
+                cost = self.totalCost(test, lmda)
+                testCost.append(cost)
+                if monitorDelta:
+                    delta = self.totalDelta(test)
+                    testDelta.append(delta)
+                    print("Error with testing data: {}".format(delta))
+                print("Cost with testing data: {}".format(cost))
+            print
+            time.sleep(delay)
+        self.trainCost += trainCost
+        self.testCost += testCost
+        self.trainDelta += trainDelta
+        self.testDelta += testDelta
+        return trainCost, testCost, trainDelta, testDelta
+    def save(self, filename):
+        #Save a neural network to a file
+        data = {"sizes": self.sizes,
+                "weights": [w.tolist() for w in self.weights],
+                "biases": [b.tolist() for b in self.biases],
+                "trainCost": self.trainCost,
+                "testCost": self.testCost,
+                "trainDelta": [trd.tolist() for trd in self.trainDelta],
+                "testDelta": [ted.tolist() for ted in self.testDelta]}
+        f = open(filename, "w")
+        json.dump(data, f)
+        f.close()
+def load(filename):
+    #Load a previously created neural network from a file
+    f = open(filename, "r")
+    data = json.load(f)
+    f.close()
+    net = NeuralNet(data["sizes"])
+    net.weights = [np.array(w) for w in data["weights"]]
+    net.biases = [np.array(b) for b in data["biases"]]
+    net.trainCost = data["trainCost"]
+    net.testCost = data["testCost"]
+    net.trainDelta = [np.array(trd) for trd in data["trainDelta"]]
+    net.testDelta = [np.array(ted) for ted in data["testDelta"]]
+    return net</code></pre>
+            </article>
             <!-- Elements -->
             <article id="elements">
                 <h2 class="major">Elements</h2>
