@@ -9,7 +9,95 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.11.4/math.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/synaptic/1.0.10/synaptic.js"></script>
+    <script type="text/javascript">
+        function initNeurAlgae() {
+            //retrieving data from .jsons
+            var request = new XMLHttpRequest();
+            request.open("GET", "../data/data.json", false);
+            request.send(null)
+            var data1 = JSON.parse(request.responseText);
+            alert(my_JSON_object.result[0]);
 
+            //Preparing Synaptic
+            var Neuron = synaptic.Neuron,
+                Layer = synaptic.Layer,
+                Network = synaptic.Network,
+                Trainer = synaptic.Trainer,
+                Architect = synaptic.Architect;
+
+            //For Pseudo Nitzschia quantities
+            var NeurAlgaePN = new Perceptron(10, 30, 3);
+            var trainingSetPN = data1;
+            var trainingOptions = {
+                rate: .1,
+                iterations: 20000,
+                error: .005,
+                cost: Trainer.cost.CROSS_ENTROPY
+            }
+
+            NeurAlgae.trainer.trainAsync(trainingSet, trainingOptions)
+                .then(results => console.log('done!', results));
+
+            var standalone = NeurAlgae.standalone();
+        }
+
+        //Get Dom elelement Stuff: inMatrix formated [ , , , , , , , , , , ]
+        function PNrequest() {
+            //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
+            document.getElementsByName("outputBox1")[0].value = String(Math.random());
+        }
+
+        function PNrequest2() {
+            //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
+            document.getElementsByName("outputBox2")[0].value = String(Math.random());
+        }
+        //var output = standalonePN(input);
+
+
+        //function LSTM(input, blocks, output) {
+        //    //create the layers
+        //    var inputLayer = new Layer(input);
+        //    var inputGate = new Layer(blocks);
+        //    var forgetGate = new Layer(blocks);
+        //    var memoryCell = new Layer(blocks);
+        //    var outputGate = new Layer(blocks);
+        //    var outputLayer = new Layer(output);
+        //
+        //    //Conncections from input layer
+        //    var input = inputLayer.project(memoryCell);
+        //    inputLayer.project(inputGate);
+        //    inputLayer.project(forgetGate);
+        //    inputLayer.project(outputGate);
+        //
+        //    //conncections from memoryCell
+        //    var output = memoryCell.project(outputLayer);
+        //}
+        //
+        ////self-connection
+        //var self = memoryCell.project(memoryCell);
+        //
+        ////peepholes
+        //memoryCell.project(inputGate);
+        //memoryCell.project(forgetGate);
+        //memoryCell.project(outputGate);
+        //
+        ////gates
+        //inputGate.gate(input, Layer.gateTpe.INPUT);
+        //forgetGate.gate(self, layer.gateType.ONE_TO_ONE);
+        //outputGate.gate(output, Layer.gateType.OUTPUT);
+        //
+        ////input to output direct connection
+        //inputLayer.project(outputLayer);
+        //this.set({
+        //    input: inputLayer,
+        //    hidden: [inputGate, forgetGate, memoryCell, outputGate],
+        //    output: outputLayer;
+        //})
+        //
+        ////extend prototype chain
+        //LSTM.prototype = new Network();
+        //LSTM.prototype.constructor = LSTM;
+    </script>
     <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
@@ -40,7 +128,7 @@
                     <li><a href="#intro">Intro</a></li>
                     <li><a href="#vision">Vision</a></li>
                     <li><a href="#analysis">Analysis</a></li>
-                    <li><a href="#app">App</a></li>
+                    <!--<li><a href="#app">App</a></li>-->
                     <li><a href="#code">Code</a></li>
                     <li><a href="#contact">About</a></li>
                     <!--<li><a href="#elements">Elements</a></li>-->
@@ -170,6 +258,10 @@
 
             <article id="app">
                 <h2 class="major">HAB Prediction</h2>
+                <h3>Before you start!</h3>
+                <p>Click the button below to instance a unique network (async)</p>
+                <a onclick="initNeurAlgae()" class="button">Train</a>
+                <hr>
                 <h3>For a single data point:</h3>
                 <p>Format your matrix as follows:</p>
                 <pre><code>SL = //Sea surface height above sea level
@@ -196,7 +288,6 @@ TU = //Water turbidity
                         <li><a onclick="PNrequest()" class="button special">Domic acid</a></li>
                         <li><a onclick="PNrequest()" class="button special">Pt. Domoic Acid</a></li>
                     </div>
-
                 </ul>
                 <textarea readonly name="outputBox1" id="outputBox1" placeholder="" cols="16em" rows="1"></textarea>
 
@@ -234,98 +325,7 @@ TU = //Water turbidity
                 <textarea readonly name="outputBox2" id="outputBox2" placeholder="" cols="16em" rows="1"></textarea>
                 <hr>
             </article>
-            <script type="text/javascript">
-                /*
-                                                                                                                                                                                                                                                function initNeurAlgae() {
-                                                                                                                                                                                                                                                    //retrieving data from .jsons
-                                                                                                                                                                                                                                                    var request = new XMLHttpRequest();
-                                                                                                                                                                                                                                                    request.open("GET", "../data/data.json", false);
-                                                                                                                                                                                                                                                    request.send(null)
-                                                                                                                                                                                                                                                    var data1 = JSON.parse(request.responseText);
-                                                                                                                                                                                                                                                    alert(my_JSON_object.result[0]);
 
-                                                                                                                                                                                                                                                    //Preparing Synaptic
-                                                                                                                                                                                                                                                    var Neuron = synaptic.Neuron,
-                                                                                                                                                                                                                                                        Layer = synaptic.Layer,
-                                                                                                                                                                                                                                                        Network = synaptic.Network,
-                                                                                                                                                                                                                                                        Trainer = synaptic.Trainer,
-                                                                                                                                                                                                                                                        Architect = synaptic.Architect;
-
-                                                                                                                                                                                                                                                    //For Pseudo Nitzschia quantities
-                                                                                                                                                                                                                                                    var NeurAlgaePN = new Perceptron(10, 30, 3);
-                                                                                                                                                                                                                                                    var trainingSetPN = data1;
-                                                                                                                                                                                                                                                    var trainingOptions = {
-                                                                                                                                                                                                                                                        rate .1,
-                                                                                                                                                                                                                                                        iterations: 20000,
-                                                                                                                                                                                                                                                        error: .005,
-                                                                                                                                                                                                                                                        cost: Trainer.cost.CROSS_ENTROPY
-                                                                                                                                                                                                                                                    }
-
-                                                                                                                                                                                                                                                    NeurAlgae.trainer.trainAsync(trainingSet, trainingOptions)
-                                                                                                                                                                                                                                                        .then(results => console.log('done!', results));
-
-                                                                                                                                                                                                                                                    var standalone = NeurAlgae.standalone();
-                                                                                                                                                                                                                                                }
-                                                                                                                                                                                                                                                window.onload = initNeurAlgae;
-                                                                                                                                                                                                                                                */
-
-                //Get Dom elelement Stuff: inMatrix formated [ , , , , , , , , , , ]
-                function PNrequest() {
-                    //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
-                    document.getElementsByName("outputBox1")[0].value = String(Math.random());
-                }
-
-                function PNrequest2() {
-                    //input = JSON.parse(document.getElementsByName("inMatrix1")[0].value);
-                    document.getElementsByName("outputBox2")[0].value = String(Math.random());
-                }
-                //var output = standalonePN(input);
-
-
-                //function LSTM(input, blocks, output) {
-                //    //create the layers
-                //    var inputLayer = new Layer(input);
-                //    var inputGate = new Layer(blocks);
-                //    var forgetGate = new Layer(blocks);
-                //    var memoryCell = new Layer(blocks);
-                //    var outputGate = new Layer(blocks);
-                //    var outputLayer = new Layer(output);
-                //
-                //    //Conncections from input layer
-                //    var input = inputLayer.project(memoryCell);
-                //    inputLayer.project(inputGate);
-                //    inputLayer.project(forgetGate);
-                //    inputLayer.project(outputGate);
-                //
-                //    //conncections from memoryCell
-                //    var output = memoryCell.project(outputLayer);
-                //}
-                //
-                ////self-connection
-                //var self = memoryCell.project(memoryCell);
-                //
-                ////peepholes
-                //memoryCell.project(inputGate);
-                //memoryCell.project(forgetGate);
-                //memoryCell.project(outputGate);
-                //
-                ////gates
-                //inputGate.gate(input, Layer.gateTpe.INPUT);
-                //forgetGate.gate(self, layer.gateType.ONE_TO_ONE);
-                //outputGate.gate(output, Layer.gateType.OUTPUT);
-                //
-                ////input to output direct connection
-                //inputLayer.project(outputLayer);
-                //this.set({
-                //    input: inputLayer,
-                //    hidden: [inputGate, forgetGate, memoryCell, outputGate],
-                //    output: outputLayer;
-                //})
-                //
-                ////extend prototype chain
-                //LSTM.prototype = new Network();
-                //LSTM.prototype.constructor = LSTM;
-            </script>
             <!--
                 <
                 script >
