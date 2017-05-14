@@ -1,5 +1,5 @@
 # FlowTech | NeurAlgae-Base
-## 2017 WWSEF Science Fair | HAB Prediction Using Machine Learning Algorithms
+## 2017 CWSF | HAB Prediction Using Machine Learning Algorithms
 
 Provides a web application for interacting with NeurAlgae neural nets and displaying project information
 Copyright (C) 2017 Atif Mahmud and Zachary Trefler
