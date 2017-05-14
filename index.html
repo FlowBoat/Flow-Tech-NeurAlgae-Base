@@ -274,7 +274,6 @@
                 <p>The prevalence of HABs is increasing; this is likely due to human causes, and a by-product of human activities (Sanseverino et al., 2016). According to Anderson et al. (2002), “virtually every coastal country is now threatened by multiple
                     harmful or toxic algal species” (p. 706). Algal blooms grow rapidly; thus, although response mechanisms exist in some areas, remediation of the damage they cause is still very costly. Kudela et al. (2015) state that HABs conservatively
                     cost several billion US dollars globally per year (p. 13). If a HAB could be predicted days or weeks in advance, remediation or even prevention could make the bloom far less costly.</p>
-                <span class="image main"><img src="images/pic04.jpg" alt="" /></span>
                 <p>The onset of HABs is difficult to predict, as they are dependent on a multitude of complex variables, including “algal species presence/abundance, degree of flushing or water exchange, weather conditions, and presence and abundance of
                     grazers” (Anderson et al., 2002, p. 704). Although real-time oceanographic monitoring systems measuring many of these variables have recently come online, early response efforts are restricted by the ability to analyze this data (Pellerin
                     et al., 2016). Prediction methods for algal blooms do exist, but generally suffer either from inaccuracy or over-specificity (i.e. are only useful in localized areas). We are unaware of any systems capable of accurately predicting
@@ -303,9 +302,6 @@
                 <p>A neural network of adequate complexity, trained in a sufficient range of oceanographic data, will learn to accurately predict HABs based on these data. Such an ANN, combined with a user friendly interface, will allow for robust predictions
                     and mitigation of HABs.
                 </p>
-                <h3>Design Criteria</h3>
-                <p>The program mus be able to retrieve sequential marine environment data from a NOAA OPENDAP database, update and train itself in realtime, accurately deterimine the probability of: harmful abundances of high toxicity, domoic acid carrying
-                    algae species. Also the web app should facilitate the easy access to the NeurAlgae prediction algorithm for the lay person, in order to increase the response time of municipal utility agencies.</p>
                 <span class="grow image main"><img src="images/process.png" alt="" /></span>
                 <h3>Procedure</h3>
                 <p>We developed NeurAlgae, a system of neural networks which aims to predict HAB occurrences in a given region using oceanographic data concerning that region. NeurAlgae parses nine separate water measurements (water surface level, pressure,
@@ -399,8 +395,8 @@
                 <h2 class="major">HAB Prediction</h2>
                 <hr>
                 <h3>ALERT:</h3>
-                <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will
-                    return shortly. Thank you for your patience.</p>
+                <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js), which is used in NeurAlgae's frontend, dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service
+                    will return shortly. Thank you for your patience.</p>
                 <hr>
                 <h3>Data Formatting:</h3>
                 <pre><code>
@@ -420,7 +416,7 @@ which correspond to the normalized value against highest and
 lowest possbile measurements.
 (ex. A chlorophyll concentration of 15% = 0.15)
 
-NeurAlgae takes a JavaScript array of 96 datapoints taken in
+NeurAlgae takes a JavaScript array of 96*n datapoints (where n is the number of days the data was recorded), taken in
 15 minute intervals summing to a days worth of data collection:
 
 For Example:
