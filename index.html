@@ -268,7 +268,7 @@
                 <li><a href="#vision">Vision</a></li>
                 <li><a href="#analysis">Analysis</a></li>
                 <li><a href="#app">App</a></li>
-                <li><a href="#code">Code</a></li>
+                <li><a href="previous.html">Previous</a></li>
                 <li><a href="#contact">About</a></li>
                 <!--<li><a href="#elements">Elements</a></li>-->
             </ul>
@@ -282,7 +282,6 @@
         <!-- Intro -->
         <article id="intro">
             <h2 class="major">Background & Introduction</h2>
-            <span class="image main"><img src="pic01.jpg" alt=""/></span>
             <p>Machine learning is a promising new way of solving complex multivariate problems. By training computers
                 to ‘learn’, complex problems may be modeled with often unprecedented accuracy. One such complex problem
                 is Harmful Algal Bloom (HAB) prediction. HABs are sudden, rapid overgrowths of algae that cause
@@ -294,6 +293,7 @@
                 given area. Because of its accuracy, robustness, and computational affordability, NeurAlgae could play a
                 valuable role in maintaining ecosystem health and avoiding the great socioeconomic and ecological
                 devastation of HABs.</p>
+            <span class="image main"><img src="images/pic01.jpg" alt=""/></span>
             <p>HABs are typically caused by the eutrophication of the ecosystem in which algae live. During a bloom, the
                 algal population is no longer limited by its nutrient supply, so it grows exponentially until other
                 factors become limiting. The sudden algal growth depletes the dissolved oxygen in the water, blocks
@@ -315,62 +315,131 @@
                 recently come online, early response efforts are restricted by the ability to analyze this data. To give
                 better analysis, and therefore more useful results, we propose a solution with a new machine learning
                 approach.</p>
+            <p>Machine learning is a computational problem-solving approach that tells computers what a solution should
+                look like, and lets them devise a method to reach one (Samuel, 1959, p. 535), rather than the
+                traditional approach of telling computers exactly how to solve a problem, which is more restrictive.
+                Machine learning approaches to problems have historically been infeasible, since they require
+                significant computational resources to search through many-dimensional spaces for an optimal solution.
+                However, as computers have become more and more powerful, machine learning solutions have become very
+                effective for certain types of problems, often dramatically outperforming traditional approaches,
+                especially on complex multivariate problems such as pattern recognition, where the scope of the problem
+                might be more than a human can easily reason about.</p>
             <span class="image main"><img src="images/exnet.png" alt=""/></span>
-            <span class="image main"><img src="images/lstm.png" alt=""/></span>
-            <p>We propose the use of a system of ANNs to identify the direct relationships between the environmental
-                factors affecting a body of water and the probability of a HAB occurring there. Some of the language
-                used here to describe the NeurAlgae
-                system is technical, so full explanations will be provided by the authors upon request.
+            <p>One particularly promising type of machine learning model is the Artificial Neural Network (ANN). ANNs
+                are loosely based on networks of neurons in animal brains: they work by propagating signals through
+                layers of nodes, all connected to each other, which each do operations on input signals to produce
+                output signals. The end result is a sophisticated model with many parameters, which can be optimized to
+                make the outputs correlate well with the expected values. ANNs have a wide variety of successful
+                applications, particularly to tasks involving complex patterns, and several variants increase accuracy
+                on specific tasks, such as Convolutional Neural Networks (CNNs), which use convolution to accurately
+                identify features in images, and Recurrent Neural Networks (RNNs) including Long Short-Term Memory
+                networks (LSTMs), which perform multiple calculations in sequence, passing the model’s current state
+                between each, allowing for analysis of data spread over a dimension such as time.
             </p>
+            <span class="image main"><img src="images/lstm.png" alt=""/></span>
         </article>
 
         <!-- Design -->
         <article id="vision">
             <h2 class="major">The Vision</h2>
             <h3>Purpose & Hypothesis</h3>
-            <p>The purpose of the NeurAlgae system is to accurately predict HAB occurrences, while generalizing its
-                operation to other datasets. Since the system is designed for any user, it should also be readily
-                accessible and built into an intuitive
-                interface.
+            <p>NeurAlgae is a proposed system of ANNs which may improve upon existing systems by using new and
+                interesting machine learning techniques (defined in more detail in “Procedure”) in conjunction with a
+                large dataset of satellite images of Lake Erie to remotely predict HABs. The satellite dataset allows
+                for remote sensing, meaning no physical measurements must be taken in person to predict blooms - which
+                is very useful with a large area of water in which to make predictions on. With sufficient development
+                of the dataset and structuring of the network parameters, we aim for improved performance over
+                comparable prediction attempts, as well as sufficient generalization to other datasets to be useful
+                beyond the scope of our initial dataset. NeurAlgae also runs on the web, using the latest satellite
+                data, as a free and publicly available prediction service. If NeurAlgae meets success criteria, improved
+                HAB prediction, and therefore potential mitigation, will become immediately and freely available to any
+                community willing to try it.
             </p>
-            <p>A neural network of adequate complexity, trained in a sufficient range of oceanographic data, will learn
-                to accurately predict HABs based on these data. Such an ANN, combined with a user friendly interface,
-                will allow for robust predictions
-                and mitigation of HABs.
+            <p>Are LSTM-based recurrent neural networks using our approach a competitive tool for the remote prediction
+                of harmful algal blooms? This is the question we attempt to answer with our research. We define
+                ‘competitive’ to mean a model whose performance is approximately equal to or better than most other
+                comparable approaches in the most important metrics. In this case, this would mean a model which
+                remotely predicts algal blooms with a reliability at least equal to most other remote-sensing and
+                prediction combination models using a similar dataset. Achieving an answer to this question is the main
+                goal of this project, since it determines whether or not our approach is valid (does it work?) and
+                meaningful (does it improve upon existing methods?).
             </p>
             <span class="grow image main"><img src="images/process.png" alt=""/></span>
             <h3>Procedure</h3>
-            <p>We developed NeurAlgae, a system of neural networks which aims to predict HAB occurrences in a given
-                region using oceanographic data concerning that region. NeurAlgae parses nine separate water
-                measurements (water surface level, pressure,
-                chlorophyll concentration, temperature, electrical conductivity, oxygen and nitrate concentrations,
-                salinity, and turbidity) taken at 15-minute intervals for three years. These measurements are correlated
-                to three indicators of a HAB
-                event: the probability of Pseudo-nitzschia diatoms being present in concentrations exceeding 10 000
-                cells per litre; the probability of the neurotoxin domoic acid (DA), being present within cells in
-                concentrations exceeding 10 picograms
-                per cell; and the probability of DA being present in the surrounding water in concentrations exceeding
-                500 nanograms per litre. The water measurements are first fed through three densely-connected ANNs of
-                REctified Linear Units (RELUs)
-                (with dropout and L2 regularization) trained to predict each of the three probabilities at the same time
-                that the measurement is taken (a nowcast). The entire set of data points and correlated nowcast
-                predictions are then fed through
-                three more networks, each designed to make predictions for various future times. These networks took in
-                sequential data using a Long Short-Term Memory (LSTM) layer. Combining separate neural network models
-                allows for accurate predictions
-                to be made on many parameters, without encountering potential training difficulties of training one
-                large model, which the computer might not recognize as having multiple components. To enhance
-                accessibility, a progressive web app
-                (PWA) was created to host the NeurAlgae system. The web server can access and download data in real
-                time, using a combination of client-side and server-side computation for fast and accurate results. The
-                PWA combines the functionality
-                of the NeurAlgae system with supplementary information to increase user understanding of the HAB issue
-                and the NeurAlgae tool. Training data was taken from the Central and Northern California Ocean Observing
-                System (CENCOOS) database,
-                measured near Morro Bay, California. The source code for NeurAlgae is available at
-                https://github.com/FlowBoat/Flow-Tech-NeurAlgae under the GNU GPL.
+            <p>
+                We first built a dataset to train our model. Using the Google Earth Engine API, we collected Landsat 7
+                and 8 Top-Of-Atmosphere (TOA) reflectance data over Lake Erie, taken from the launch of Landsat 8 to the
+                present. This data was then condensed to account for algal ‘fuzziness’ and to make the dataset size more
+                manageable. We then applied a mask over clouds in each image, to avoid their interfering with the model.
+                The TOA reflectance data was finally transformed into concentrations of chlorophyll-a (Chl-A) and
+                phycocyanin (PC), algal biovolume (AV), and secchi depth (SD) using statistically obtained empirical
+                correlations developed by Trescott (2012) and Torbick (2015). This produced four time series of maps of
+                algal data. These four datasets were then used to create the inputs for four parallel predictive models.
             </p>
-
+            <p>Once the dataset was assembled, we then built neural network architectures. Each architecture processes
+                maps data in a time interval, and for each input, outputs the predicted state of the patch in the next
+                timestep, saving its internal state for the next input. After the inputs are all processed, the network
+                uses its saved state to continue to output predictions for a certain number of iterations. These
+                predictions were compared with the actual future data, and the error on each point in the data map was
+                used to train the model. Training occured on a larger sample of the dataset, but a significant portion
+                of data was reserved to test the models’ abilities to generalize.</p>
+            <p>
+                For each model type, we trained and tested numerous different versions, each involving the same basic
+                set of concepts that we have chosen to implement, but with different configurations of hyperparameters
+                (parameters of the model which do not change as a part of training). We compared the versions against
+                each other, as well as against other published models. The version with the best performance became the
+                final model of that type.
+            </p>
+            <p>
+                The final version of NeurAlgae was then made available on the Internet. We implemented the trained
+                models on a web backend, which users may interact with using an intuitive and accessible frontend. The
+                server downloads new satellite data, generates new predictions, and updates the frontend accordingly.
+                Users may view past actual data and predictions, as well as information about the project. Also freely
+                available (under the GNU GPL) on the web is the project source code and documentation, which can be used
+                to recreate our models or modified to train models on other datasets. In theory, the steps used to
+                produce our models could be replicated on any water region affected by HABs in the world.
+            </p>
+            <p>
+                Simply put, a neural network is a graph with weighted and directed edges where values are entered into a
+                fixed series of input nodes which are then propagated through the rest of the graph by setting the value
+                of each non-input node to a function of its upstream neighbors’ values and weights, creating a structure
+                similar to natural neural networks (Kleene, 1951). A subset of the non-input nodes are defined as the
+                network’s output, the values of which can be considered the outputs of a model described by a graph. The
+                model is improved, or ’trained’, by mathematically optimizing the weights of the graph to minimize the
+                error between the model’s output and a desired output for the given input. The optimization is often
+                done by calculating the gradient of the of the model’s error with respect to the weights and adjusting
+                the weights in the direction of the gradient vector, or some variation upon this method (our model makes
+                several of these variations).
+            </p>
+            <p>
+                In order to make meaningful improvements upon existing models, however, we employed a variety of
+                leading-edge machine learning concepts on top of the basic description above. Our model used recurrence
+                using LSTMs - a special form of node which saves state (recurrence), while keeping model gradients high
+                to improve learning rate (Hochreiter & Schmidhuber, 1997). LSTMs are used extensively in modern
+                time-series machine learning tasks, such as video and speech processing, but algal bloom prediction
+                remains a much less-thoroughly solved - and much more costly - problem. We used LSTMs to create a model
+                that quickly learns how to associate past data with future data. On a high level, our model examines the
+                permutation of algae on a given day and uses its understandings of the ecosystem to predict the movement
+                and growth patterns of the algae.
+            </p>
+            <p>
+                We further improved our model using a combination of adaptations in recent machine-learning techniques,
+                such as Nesterov momentum optimization (an improvement over traditional Stochastic Gradient Descent) to
+                increase training speed and accuracy. By performing efficient data manipulation, our implementation was
+                able to process large areas of the lake at once, allowing the model maximum context for predictions,
+                while keeping data resolution high. Dropout and L2 regularization were implemented to allow our model to
+                generalize to data not in the training set, effectively by penalizing unnecessary model complexity.
+                Model complexity, past a certain point, allows the model to ‘memorize’ parts of a dataset, creating
+                artificially high simulated performance, but very low effectiveness on new data. We therefore used the
+                machine-learning equivalent of Ockham’s Razor to allow for a more robust model.
+            </p>
+            <p>
+                Machine-learning models are very complex, so it is outside the small scope of this report to fully
+                describe the more intricate parameters used in training our models. In particular, the differences
+                between each trained version of the model require a much more detailed description of the NeurAlgae
+                system. Readers are encouraged to examine NeurAlgae online, where we provide thorough documentation, at
+                both the simple and technical level.
+            </p>
         </article>
 
         <!-- Analysis -->
@@ -378,82 +447,63 @@
             <h2 class="major">Analysis</h2>
             <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
             <h3>Results and analysis</h3>
-            <p>When validating our networks, our model performed optimally using 4 layers (including an LSTM layer or an
-                additional dense RELU layer) in each network, dropout, and 0.0001 for the L2 regularization. We trained
-                each model using the Nadam
-                learning algorithm (Kingma and Ba, 2015), with the model’s mean squared error (MSE) for the cost
-                function, which measures how well our model fits historical data. Our data consisted of ~35 000 data
-                points taken from the CENCOOS water
-                monitoring database, which was split into training and testing datasets. When the networks were trained,
-                the training costs dropped to between 0.004 and 0.01, within 50 epochs. Note that results with some
-                degree of noise should be
-                expected, since biological outcomes are determined by far more parameters than the aforementioned nine.
-                However, our model was able to achieve a MSE within 0.001-0.01 with only nine parameters - and the
-                approach could be used to fit
-                arbitrary datasets, so if more data became available, accuracy would increase correspondingly. Our
-                models taking in smaller amounts of data achieved good generalization, but accuracy was limited by
-                regularization. However, when models
-                were given larger quantities of data, they achieved very accurate fits for consistent data, while still
-                generalizing for noisy data, developing increasingly sophisticated models for extrapolating data. We
-                discovered another machine-learning
-                approach to the prediction of HABs: Zhang et al. (2016) created a predictive model for HAB prediction in
-                the East China Sea using stacked layers of Boltzmann machines. When compared to their model, predicting
-                different but closely
-                correlated data, NeurAlgae achieved losses approximately ten times lower, a significant improvement, and
-                with regularization methods to allow for improved generalization.</p>
+            <span class="image main"><img src="images/diff.png" alt=""/></span>
+            <p>In 2017, we made a preliminary version of NeurAlgae which used a much smaller dataset of a different
+                type, predicting pseudo-nitzchia blooms off the coast of southern California. While the project was
+                smaller in scope, and less advanced in implementation, it used many of the same core concepts to bloom
+                prediction. We compared this older version to the closest comparable model we found, by Zhang et al.
+                (2016), and found that our final model outperformed this by approximately one order of magnitude. This
+                suggests that our method represents a novel improvement in this area of machine learning. (Our 2017
+                results are available at flowboat.github.io/Flow-Tech-NeurAlgae-Base/). We used these encouraging
+                results as a base to create this new, and much more up-to-date, version of NeurAlgae.</p>
+            <p>This year’s version, NeurAlgae 3, is at this moment still going through the training process. Model
+                training is computationally very difficult: an optimization algorithm must search for a minimum error
+                through high-dimensional space of thousands or millions of parameters. We began the training process in
+                December, and we expect to continue revising, re-training, validating, and comparing models until at
+                least mid-April. The experimental stage of this project is therefore not complete, and we cannot provide
+                a thorough analysis of all of our progress. Due to the nature of machine learning, stopping model
+                learning part-way through is not an option, and all models must be trained equally and fully, to provide
+                a basis for meaningful comparison.</p>
+            <p>However, our progress to date has already surpassed standards for HAB prediction of this type. Our work
+                is now a matter of fully completing all the tests we set out to perform, thereby allowing a complete
+                final analysis and selection of our final four models to be made.</p>
+            <p>To provide a visual demonstration of our success, we present a comparison of sample chlorophyll-A and
+                phycocyanin concentrations, cyanobacteria biovolume, and secchi depth, overlayed across maps of a
+                portion lake Erie, in pairs corresponding to a week’s difference in time (Appendix A). Current results
+                indicate that predictions will be accurate up to several times this value (i.e., up to several weeks in
+                the future).</p>
+            <p>
+                Since NeurAlgae is trained by computing a cost function of the model’s output in relation to the inputs,
+                data analysis is, by definition, already done in large part by training the model. The data produced as
+                the model trains can be collected and analyzed. Analyses over the final results will include running
+                each model over the entire dataset to illustrate performance with respect to measurement time, as well
+                as finding the complete correlation between predicted and observed measurements. Separate analyses on
+                NeurAlgae’s performance on training and testing datasets will be made, to ensure that any overfitting is
+                easily visible and can be corrected as necessary. (To date, we have not observed any significant
+                training/testing cost divergence). The results of these final models will then be compared both to
+                real-world data, providing absolute testing of NeurAlgae, and to other predictive models, to examine the
+                efficacy of our model from a more relative standpoint.
+            </p>
+            <p>From where we stand today, NeurAlgae appears to indicate that machine learning offers a viable approach
+                to developing a robust HAB prediction tool using publicly available data. The possibilities offered not
+                only by NeurAlgae, but by further developments in machine-learning, would represent an extraordinarily
+                valuable application in itself, and one that offers intriguing possibilities for applying machine
+                learning to numerous real-world ecological challenges.</p>
             <hr>
             <div style="text-align:center;">
                 <a href="#appendicies" class="scrolly button special">Visit Appendicies</a>
             </div>
             <hr>
-            <p>When given input data, the trained networks gave output values which were not exactly the same as the
-                given algal bloom probabilities, but were in a close range - which is the optimal result for this
-                problem, since the empirical data can
-                vary so much, a fairly wide margin to account for differences is necessary in the model to prevent
-                overfitting, and yet the model still is able to produce output data that is accurate enough to give a
-                good idea of the algal bloom chances
-                in that region.</p>
-            <h3>Conclusion</h3>
-            <p>The NeurAlgae system was demonstrated to accurately predict the probability of HABs. The model can form
-                predictions up to one week in advance, giving authorities time to respond. The model’s accuracy
-                increases as it is given more data,
-                managing to stay general when the data is limited but fitting precisely given a larger dataset. Our
-                model can be generalized to other datasets, given the use of the L2 regularization and dropout, and can
-                use an arbitrarily expanded
-                set of parameters to improve accuracy. Overall, the NeurAlgae system constitutes a novel and robust tool
-                in the prediction of HABs, and demonstrates the applicability of ANNs in approaching a complex
-                multivariate problem with profound
-                human and ecological consequences.</p>
-            <h3>Next steps</h3>
-            <p>Although the likeliness of our training algorithm to improve from this point on is minimal; however,
-                moving forward we look to imrpove the accessibiltiy of our webapp by eagerly awaiting, and immediately
-                updating to the latest patch of
-                Keras.js. Also, by implementing a node module like Synaptic.js or TensorFlow in the web, we will be able
-                to train our network in realtime, with a constant stream of data from CENCOOS (or other databases).
-                Currently our only limitations
-                are our budget, and and the scope of our imaginations. If provided access to a dedicated server, the
-                management of the NeurAlgae database and Neural network operation becomes much more stable. As of now a
-                standard Firebase or Heroku
-                deployment wouldn't fit our needs as data scientists. We hope to move towards a dedicated server soon,
-                and with it a safer future for coastlines globally.
-            </p>
-            <h3>Acknowledgements</h3>
-            <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing
-                us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on
-                both formatting issues and
-                geographical data.</p>
             <h3 id="appendicies">Appendicies</h3>
             <h5>(Note that network preformance improves as one moves down)</h5>
-            <span class="image main"><img src="images/MSEvE_0.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_0.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_15.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_15.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_1.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_1.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_3.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_3.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_7.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_7.png" alt=""/></span>
+            <span class="image main"><img src="images/Chla_1.png" alt=""/></span>
+            <span class="image main"><img src="images/chla_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Phyco_1.png" alt=""/></span>
+            <span class="image main"><img src="images/Phyco_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Biovol_1.png" alt=""/></span>
+            <span class="image main"><img src="images/Biovol_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Secchi_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Secchi_1.png" alt=""/></span>
         </article>
 
         <!-- Contact -->
