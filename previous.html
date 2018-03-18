@@ -3,9 +3,9 @@
 
 <head>
     <title>NeurAlgae</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
-    <link rel="stylesheet" href="assets/css/main.css"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.11.4/math.min.js"></script>
     <script src="keras.js"></script>
@@ -121,7 +121,7 @@
 
         data = new Array
 
-        OneDay = function () {
+        OneDay = function() {
             data = document.getElementById('OneData').value
             document.getElementById("OneData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -132,31 +132,26 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA1.ready().then(() = > {
+            CDA1.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PDA1.ready().then(() = > {
+            PDA1.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PN1.ready().then(() = > {
+            PN1.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
+            })
         }
 
-        ThreeDay = function (data) {
+        ThreeDay = function(data) {
             data = document.getElementById('ThreeData').value
             document.getElementById("ThreeData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -167,31 +162,26 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA3.ready().then(() = > {
+            CDA3.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PDA3.ready().then(() = > {
+            PDA3.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PN3.ready().then(() = > {
+            PN3.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
+            })
         }
 
-        SevenDay = function (data) {
+        SevenDay = function(data) {
             data = document.getElementById('ThreeData').value
             document.getElementById("SevenData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -202,35 +192,27 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA7.ready().then(() = > {
+            CDA7.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PDA7.ready().then(() = > {
+            PDA7.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
-            ;
+            });
 
-            PN7.ready().then(() = > {
+            PN7.ready().then(() => {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            }
-        )
+            })
         }
     </script>
-    <!--[if lte IE 9]>
-    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css"/>
-    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
 <body>
@@ -240,25 +222,17 @@
 
     <!-- Header -->
     <header id="header">
+        <div class="logo">
+            <span class="icon fa-tint"></span>
+        </div>
         <div class="content">
             <div class="inner">
-                <h1 align="center">
-                    <br>
-                    <a href="#"><img src="https://i.imgur.com/x1OZ9UR.png" alt="NeurAlgae" width="200"></a>
-                    <br>
-                    NeurAlgae 3.0
-                    <br>
-                </h1>
-
-                <h4 align="center">A Novel Approach to Harmful Algal Bloom Prediction Using Artificial Neural
-                    Networks</h4>
-
-                <h5 align="center">By: Zach Trefler and Atif Mahmud</h5>
-
-                <p align="center">
-                    <img src="http://forthebadge.com/images/badges/made-with-python.svg" alt="">
-                    <img src="http://forthebadge.com/images/badges/powered-by-water.svg" alt="">
-                    <img src="http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg" alt="">
+                <h1 style="font-family: 'Lato', sans-serif; text-transform: none;">NeurAlgae</h1>
+                <p>
+                    <!--[-->A Novel Approach to Harmful Algal Bloom Prediction Using Machine Learning
+                    <!--]--><br />
+                    <!--[-->By Atif Mahmud and Zachary Trefler
+                    <!--]-->
                 </p>
             </div>
         </div>
@@ -282,44 +256,38 @@
         <!-- Intro -->
         <article id="intro">
             <h2 class="major">Background & Introduction</h2>
-            <span class="image main"><img src="pic01.jpg" alt=""/></span>
-            <p>Machine learning is a promising new way of solving complex multivariate problems. By training computers
-                to ‘learn’, complex problems may be modeled with often unprecedented accuracy. One such complex problem
-                is Harmful Algal Bloom (HAB) prediction. HABs are sudden, rapid overgrowths of algae that cause
-                significant damage to ecosystems all over the world. They have historically been both costly (in terms
-                of human and ecosystem health) (Anderson, Hoagland, Kaoru, & White, 2000) and difficult to predict. With
-                advance warning, however, human, ecological and economic costs can be substantially lowered. Some HABs
-                could potentially even be prevented. We propose a novel system, NeurAlgae, that takes remote sensing
-                data as input, and, using machine learning techniques, trains itself to accurately predict HABs in a
-                given area. Because of its accuracy, robustness, and computational affordability, NeurAlgae could play a
-                valuable role in maintaining ecosystem health and avoiding the great socioeconomic and ecological
-                devastation of HABs.</p>
-            <p>HABs are typically caused by the eutrophication of the ecosystem in which algae live. During a bloom, the
-                algal population is no longer limited by its nutrient supply, so it grows exponentially until other
-                factors become limiting. The sudden algal growth depletes the dissolved oxygen in the water, blocks
-                sunlight, and generally wreaks havoc on the ecosystem (Anderson, Glibert, & Burkholder, 2002). Many
-                algal blooms also create toxins as part of their metabolic processes, which can often harm or kill other
-                organisms in the vicinity, including humans. The damage caused by these blooms is enormous - globally,
-                the total monetary cost of HABs is estimated to be in the billions of dollars annually (Kudela et al.,
-                2015, p. 13), and “cyanobacterial toxins have caused human poisoning … there is accumulating evidence
-                that they are present in treated drinking water supplies when cyanobacterial blooms occur in source
-                waters” (Falconer & Humpage, 2004).</p>
-            <span class="image main"><img src="images/algae.jpg" alt=""/></span>
-            <p>Systems which can predict bloom outbreaks are thus extremely useful. If a HAB can be predicted given the
-                present state of an area of water, then affected areas can prepare for a possible HAB occurrence.
-                Measures taken might include setting up health-related precautions (dealing with possible toxins in the
-                water), for instance, or even deploying technologies that prevent a HAB from forming in the first place.
-                These measures are much more effective when deployed in advance, so it is very valuable to know where
-                and when a bloom is most likely to occur. However, according to Pellerin et al. (2016), although
-                real-time oceanographic monitoring systems measuring many of the variables relevant to HABs have
-                recently come online, early response efforts are restricted by the ability to analyze this data. To give
-                better analysis, and therefore more useful results, we propose a solution with a new machine learning
-                approach.</p>
-            <span class="image main"><img src="images/exnet.png" alt=""/></span>
-            <span class="image main"><img src="images/lstm.png" alt=""/></span>
-            <p>We propose the use of a system of ANNs to identify the direct relationships between the environmental
-                factors affecting a body of water and the probability of a HAB occurring there. Some of the language
-                used here to describe the NeurAlgae
+            <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+            <p>Harmful algal blooms (HABs) are sudden, rapid overgrowths of algae that can damage coastal and lakeshore ecosystems, cause socioeconomic harm to areas dependent on them, and cause serious human health issues. HAB incidence has increased
+                worldwide in recent decades, with escalating associated costs and damage. Accurately predicting HABs before they occur could significantly mitigate these costs; however they are dependent on complex interactions among many variable
+                factors. We investigate whether an artificial neural network could yield accurate HAB predictions. NeurAlgae is a system of Artificial Neural Networks (ANNs) that uses nine measurements from real-time ocean monitoring stations taken
+                at 15-minute intervals over three years to train its predictions. We used a first set of networks to expand our dataset, and then a second set of recurrent networks to generate more accurate predictions. We tested our system with a
+                separate subset of the data to prevent overfitting. Our system produced predictions 10 times more accurate than the only comparable machine learning-based HAB prediction tool we were able to find in the scientific literature (Zhang
+                et al. 2016). NeurAlgae thus constitutes a novel and robust tool for HAB prediction that demonstrates the utility of ANNs in approaching a complex multivariate problem with profound human and ecological consequences.</p>
+            <span class="image main"><img src="images/bloom.jpg" alt="" /></span>
+            <p>Algal blooms are incidences of sudden and rapid overgrowth in microscopic cyanobacteria and algae in water bodies, typically caused by eutrophication. Eutrophication is the overabundance of nutrients on which the algae feed. It is often
+                caused by the presence of “urban and rural wastewater, fertilizers applied to agricultural fields, combustion of fossil fuels, erosion of soil containing nutrients and sewage treatment plant discharges” (Sanseverino, Conduto, Pozzoli,
+                Dobricic, & Lettieri, 2016, p. 11). In some cases these blooms proliferate to the point where they harm the surrounding aquatic ecosystem (Anderson, Glibert, & Burkholder, 2002). These harmful algal blooms (HABs) can damage coastal
+                and lakeshore ecosystems, cause socioeconomic harm to areas dependent on them, and injure human health (Anderson, Hoagland, Kaoru, & White, 2000). Algal blooms grow in sheets that can cover large areas, restricting sunlight to aquatic
+                vegetation below. Once the bloom dies off, its decomposition depletes the dissolved oxygen in the water, creating hypoxic, or “dead,” zones (Fields, 2004). In addition, the metabolic processes of many saltwater species of algae, such
+                as Pseudo-nitzschia, produce toxins capable of harming humans and animals (Anderson et al., 2002, p. 705).</p>
+            <span class="image main"><img src="images/algae.jpg" alt="" /></span>
+            <p>The prevalence of HABs is increasing; this is likely due to human causes, and a by-product of human activities (Sanseverino et al., 2016). According to Anderson et al. (2002), “virtually every coastal country is now threatened by multiple
+                harmful or toxic algal species” (p. 706). Algal blooms grow rapidly; thus, although response mechanisms exist in some areas, remediation of the damage they cause is still very costly. Kudela et al. (2015) state that HABs conservatively
+                cost several billion US dollars globally per year (p. 13). If a HAB could be predicted days or weeks in advance, remediation or even prevention could make the bloom far less costly.</p>
+            <p>The onset of HABs is difficult to predict, as they are dependent on a multitude of complex variables, including “algal species presence/abundance, degree of flushing or water exchange, weather conditions, and presence and abundance of
+                grazers” (Anderson et al., 2002, p. 704). Although real-time oceanographic monitoring systems measuring many of these variables have recently come online, early response efforts are restricted by the ability to analyze this data (Pellerin
+                et al., 2016). Prediction methods for algal blooms do exist, but generally suffer either from inaccuracy or over-specificity (i.e. are only useful in localized areas). We are unaware of any systems capable of accurately predicting
+                HABs, which are still able to generalize to other datasets (can be used to predict blooms in areas other than those in their dataset). An accurate while simultaneously versatile system would be of enormous ecological and socioeconomic
+                value.
+            </p>
+            <p>Given that HAB outbreaks are dependent on many factors whose interactions are very complicated, machine learning, denoting programs that behave in a way resembling human learning (Samuel 1959, p. 535), may be a candidate for providing
+                a solution to this difficult problem. One attractive implementation of machine learning techniques is the Artificial Neural Network (ANN). ANNs are made up of mathematical operators which pass values through a synthetic network, similarly
+                to how neurons parse information via electrical impulses (Kleene, 1951). To use an ANN for a machine learning problem, a model for the problem is generated, and the network makes correlations between given inputs and desired outputs
+                by modifying its own parameters. In this way, computers are able to process and create relationships between data that might be incomprehensibly vast or complicated to humans.
+            </p>
+            <span class="image main"><img src="images/exnet.png" alt="" /></span>
+            <span class="image main"><img src="images/lstm.png" alt="" /></span>
+            <p>We propose the use of a system of ANNs to identify the direct relationships between the environmental factors affecting a body of water and the probability of a HAB occurring there. Some of the language used here to describe the NeurAlgae
                 system is technical, so full explanations will be provided by the authors upon request.
             </p>
         </article>
@@ -328,47 +296,24 @@
         <article id="vision">
             <h2 class="major">The Vision</h2>
             <h3>Purpose & Hypothesis</h3>
-            <p>The purpose of the NeurAlgae system is to accurately predict HAB occurrences, while generalizing its
-                operation to other datasets. Since the system is designed for any user, it should also be readily
-                accessible and built into an intuitive
+            <p>The purpose of the NeurAlgae system is to accurately predict HAB occurrences, while generalizing its operation to other datasets. Since the system is designed for any user, it should also be readily accessible and built into an intuitive
                 interface.
             </p>
-            <p>A neural network of adequate complexity, trained in a sufficient range of oceanographic data, will learn
-                to accurately predict HABs based on these data. Such an ANN, combined with a user friendly interface,
-                will allow for robust predictions
+            <p>A neural network of adequate complexity, trained in a sufficient range of oceanographic data, will learn to accurately predict HABs based on these data. Such an ANN, combined with a user friendly interface, will allow for robust predictions
                 and mitigation of HABs.
             </p>
-            <span class="grow image main"><img src="images/process.png" alt=""/></span>
+            <span class="grow image main"><img src="images/process.png" alt="" /></span>
             <h3>Procedure</h3>
-            <p>We developed NeurAlgae, a system of neural networks which aims to predict HAB occurrences in a given
-                region using oceanographic data concerning that region. NeurAlgae parses nine separate water
-                measurements (water surface level, pressure,
-                chlorophyll concentration, temperature, electrical conductivity, oxygen and nitrate concentrations,
-                salinity, and turbidity) taken at 15-minute intervals for three years. These measurements are correlated
-                to three indicators of a HAB
-                event: the probability of Pseudo-nitzschia diatoms being present in concentrations exceeding 10 000
-                cells per litre; the probability of the neurotoxin domoic acid (DA), being present within cells in
-                concentrations exceeding 10 picograms
-                per cell; and the probability of DA being present in the surrounding water in concentrations exceeding
-                500 nanograms per litre. The water measurements are first fed through three densely-connected ANNs of
-                REctified Linear Units (RELUs)
-                (with dropout and L2 regularization) trained to predict each of the three probabilities at the same time
-                that the measurement is taken (a nowcast). The entire set of data points and correlated nowcast
-                predictions are then fed through
-                three more networks, each designed to make predictions for various future times. These networks took in
-                sequential data using a Long Short-Term Memory (LSTM) layer. Combining separate neural network models
-                allows for accurate predictions
-                to be made on many parameters, without encountering potential training difficulties of training one
-                large model, which the computer might not recognize as having multiple components. To enhance
-                accessibility, a progressive web app
-                (PWA) was created to host the NeurAlgae system. The web server can access and download data in real
-                time, using a combination of client-side and server-side computation for fast and accurate results. The
-                PWA combines the functionality
-                of the NeurAlgae system with supplementary information to increase user understanding of the HAB issue
-                and the NeurAlgae tool. Training data was taken from the Central and Northern California Ocean Observing
-                System (CENCOOS) database,
-                measured near Morro Bay, California. The source code for NeurAlgae is available at
-                https://github.com/FlowBoat/Flow-Tech-NeurAlgae under the GNU GPL.
+            <p>We developed NeurAlgae, a system of neural networks which aims to predict HAB occurrences in a given region using oceanographic data concerning that region. NeurAlgae parses nine separate water measurements (water surface level, pressure,
+                chlorophyll concentration, temperature, electrical conductivity, oxygen and nitrate concentrations, salinity, and turbidity) taken at 15-minute intervals for three years. These measurements are correlated to three indicators of a HAB
+                event: the probability of Pseudo-nitzschia diatoms being present in concentrations exceeding 10 000 cells per litre; the probability of the neurotoxin domoic acid (DA), being present within cells in concentrations exceeding 10 picograms
+                per cell; and the probability of DA being present in the surrounding water in concentrations exceeding 500 nanograms per litre. The water measurements are first fed through three densely-connected ANNs of REctified Linear Units (RELUs)
+                (with dropout and L2 regularization) trained to predict each of the three probabilities at the same time that the measurement is taken (a nowcast). The entire set of data points and correlated nowcast predictions are then fed through
+                three more networks, each designed to make predictions for various future times. These networks took in sequential data using a Long Short-Term Memory (LSTM) layer. Combining separate neural network models allows for accurate predictions
+                to be made on many parameters, without encountering potential training difficulties of training one large model, which the computer might not recognize as having multiple components. To enhance accessibility, a progressive web app
+                (PWA) was created to host the NeurAlgae system. The web server can access and download data in real time, using a combination of client-side and server-side computation for fast and accurate results. The PWA combines the functionality
+                of the NeurAlgae system with supplementary information to increase user understanding of the HAB issue and the NeurAlgae tool. Training data was taken from the Central and Northern California Ocean Observing System (CENCOOS) database,
+                measured near Morro Bay, California. The source code for NeurAlgae is available at https://github.com/FlowBoat/Flow-Tech-NeurAlgae under the GNU GPL.
             </p>
 
         </article>
@@ -378,117 +323,70 @@
             <h2 class="major">Analysis</h2>
             <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
             <h3>Results and analysis</h3>
-            <p>When validating our networks, our model performed optimally using 4 layers (including an LSTM layer or an
-                additional dense RELU layer) in each network, dropout, and 0.0001 for the L2 regularization. We trained
-                each model using the Nadam
-                learning algorithm (Kingma and Ba, 2015), with the model’s mean squared error (MSE) for the cost
-                function, which measures how well our model fits historical data. Our data consisted of ~35 000 data
-                points taken from the CENCOOS water
-                monitoring database, which was split into training and testing datasets. When the networks were trained,
-                the training costs dropped to between 0.004 and 0.01, within 50 epochs. Note that results with some
-                degree of noise should be
-                expected, since biological outcomes are determined by far more parameters than the aforementioned nine.
-                However, our model was able to achieve a MSE within 0.001-0.01 with only nine parameters - and the
-                approach could be used to fit
-                arbitrary datasets, so if more data became available, accuracy would increase correspondingly. Our
-                models taking in smaller amounts of data achieved good generalization, but accuracy was limited by
-                regularization. However, when models
-                were given larger quantities of data, they achieved very accurate fits for consistent data, while still
-                generalizing for noisy data, developing increasingly sophisticated models for extrapolating data. We
-                discovered another machine-learning
-                approach to the prediction of HABs: Zhang et al. (2016) created a predictive model for HAB prediction in
-                the East China Sea using stacked layers of Boltzmann machines. When compared to their model, predicting
-                different but closely
-                correlated data, NeurAlgae achieved losses approximately ten times lower, a significant improvement, and
-                with regularization methods to allow for improved generalization.</p>
+            <p>When validating our networks, our model performed optimally using 4 layers (including an LSTM layer or an additional dense RELU layer) in each network, dropout, and 0.0001 for the L2 regularization. We trained each model using the Nadam
+                learning algorithm (Kingma and Ba, 2015), with the model’s mean squared error (MSE) for the cost function, which measures how well our model fits historical data. Our data consisted of ~35 000 data points taken from the CENCOOS water
+                monitoring database, which was split into training and testing datasets. When the networks were trained, the training costs dropped to between 0.004 and 0.01, within 50 epochs. Note that results with some degree of noise should be
+                expected, since biological outcomes are determined by far more parameters than the aforementioned nine. However, our model was able to achieve a MSE within 0.001-0.01 with only nine parameters - and the approach could be used to fit
+                arbitrary datasets, so if more data became available, accuracy would increase correspondingly. Our models taking in smaller amounts of data achieved good generalization, but accuracy was limited by regularization. However, when models
+                were given larger quantities of data, they achieved very accurate fits for consistent data, while still generalizing for noisy data, developing increasingly sophisticated models for extrapolating data. We discovered another machine-learning
+                approach to the prediction of HABs: Zhang et al. (2016) created a predictive model for HAB prediction in the East China Sea using stacked layers of Boltzmann machines. When compared to their model, predicting different but closely
+                correlated data, NeurAlgae achieved losses approximately ten times lower, a significant improvement, and with regularization methods to allow for improved generalization.</p>
             <hr>
             <div style="text-align:center;">
                 <a href="#appendicies" class="scrolly button special">Visit Appendicies</a>
             </div>
             <hr>
-            <p>When given input data, the trained networks gave output values which were not exactly the same as the
-                given algal bloom probabilities, but were in a close range - which is the optimal result for this
-                problem, since the empirical data can
-                vary so much, a fairly wide margin to account for differences is necessary in the model to prevent
-                overfitting, and yet the model still is able to produce output data that is accurate enough to give a
-                good idea of the algal bloom chances
+            <p>When given input data, the trained networks gave output values which were not exactly the same as the given algal bloom probabilities, but were in a close range - which is the optimal result for this problem, since the empirical data can
+                vary so much, a fairly wide margin to account for differences is necessary in the model to prevent overfitting, and yet the model still is able to produce output data that is accurate enough to give a good idea of the algal bloom chances
                 in that region.</p>
             <h3>Conclusion</h3>
-            <p>The NeurAlgae system was demonstrated to accurately predict the probability of HABs. The model can form
-                predictions up to one week in advance, giving authorities time to respond. The model’s accuracy
-                increases as it is given more data,
-                managing to stay general when the data is limited but fitting precisely given a larger dataset. Our
-                model can be generalized to other datasets, given the use of the L2 regularization and dropout, and can
-                use an arbitrarily expanded
-                set of parameters to improve accuracy. Overall, the NeurAlgae system constitutes a novel and robust tool
-                in the prediction of HABs, and demonstrates the applicability of ANNs in approaching a complex
-                multivariate problem with profound
+            <p>The NeurAlgae system was demonstrated to accurately predict the probability of HABs. The model can form predictions up to one week in advance, giving authorities time to respond. The model’s accuracy increases as it is given more data,
+                managing to stay general when the data is limited but fitting precisely given a larger dataset. Our model can be generalized to other datasets, given the use of the L2 regularization and dropout, and can use an arbitrarily expanded
+                set of parameters to improve accuracy. Overall, the NeurAlgae system constitutes a novel and robust tool in the prediction of HABs, and demonstrates the applicability of ANNs in approaching a complex multivariate problem with profound
                 human and ecological consequences.</p>
             <h3>Next steps</h3>
-            <p>Although the likeliness of our training algorithm to improve from this point on is minimal; however,
-                moving forward we look to imrpove the accessibiltiy of our webapp by eagerly awaiting, and immediately
-                updating to the latest patch of
-                Keras.js. Also, by implementing a node module like Synaptic.js or TensorFlow in the web, we will be able
-                to train our network in realtime, with a constant stream of data from CENCOOS (or other databases).
-                Currently our only limitations
-                are our budget, and and the scope of our imaginations. If provided access to a dedicated server, the
-                management of the NeurAlgae database and Neural network operation becomes much more stable. As of now a
-                standard Firebase or Heroku
-                deployment wouldn't fit our needs as data scientists. We hope to move towards a dedicated server soon,
-                and with it a safer future for coastlines globally.
+            <p>Although the likeliness of our training algorithm to improve from this point on is minimal; however, moving forward we look to imrpove the accessibiltiy of our webapp by eagerly awaiting, and immediately updating to the latest patch of
+                Keras.js. Also, by implementing a node module like Synaptic.js or TensorFlow in the web, we will be able to train our network in realtime, with a constant stream of data from CENCOOS (or other databases). Currently our only limitations
+                are our budget, and and the scope of our imaginations. If provided access to a dedicated server, the management of the NeurAlgae database and Neural network operation becomes much more stable. As of now a standard Firebase or Heroku
+                deployment wouldn't fit our needs as data scientists. We hope to move towards a dedicated server soon, and with it a safer future for coastlines globally.
             </p>
             <h3>Acknowledgements</h3>
-            <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing
-                us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on
-                both formatting issues and
+            <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on both formatting issues and
                 geographical data.</p>
             <h3 id="appendicies">Appendicies</h3>
             <h5>(Note that network preformance improves as one moves down)</h5>
-            <span class="image main"><img src="images/MSEvE_0.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_0.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_15.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_15.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_1.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_1.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_3.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_3.png" alt=""/></span>
-            <span class="image main"><img src="images/MSEvE_7.png" alt=""/></span>
-            <span class="image main"><img src="images/POvT_7.png" alt=""/></span>
+            <span class="image main"><img src="images/MSEvE_0.png" alt="" /></span>
+            <span class="image main"><img src="images/POvT_0.png" alt="" /></span>
+            <span class="image main"><img src="images/MSEvE_15.png" alt="" /></span>
+            <span class="image main"><img src="images/POvT_15.png" alt="" /></span>
+            <span class="image main"><img src="images/MSEvE_1.png" alt="" /></span>
+            <span class="image main"><img src="images/POvT_1.png" alt="" /></span>
+            <span class="image main"><img src="images/MSEvE_3.png" alt="" /></span>
+            <span class="image main"><img src="images/POvT_3.png" alt="" /></span>
+            <span class="image main"><img src="images/MSEvE_7.png" alt="" /></span>
+            <span class="image main"><img src="images/POvT_7.png" alt="" /></span>
         </article>
 
         <!-- Contact -->
         <article id="contact">
             <h2 class="major">About Us</h2>
-            <span class="image left"><img src="images/us.jpg" alt=""></span> Hi, in all the rush of Neural Networks and
-            their application in Algal Bloom prediction, we forgot to mention to you who we were! We're Atif and Zach,
-            partners, long-time
-            pals and best friends. We've been in the same class for 7 years (and counting) and it's been a blast! Our
-            friendship goes way back and so does our love of science. This is our second year doing a joint project and
-            it has been the most
-            fun of all our years of science fair. If you have any questions, comments or concerns feel free to hit us up
-            at any of our socials!
+            <span class="image left"><img src="images/us.jpg" alt=""></span> Hi, in all the rush of Neural Networks and their application in Algal Bloom prediction, we forgot to mention to you who we were! We're Atif and Zach, partners, long-time
+            pals and best friends. We've been in the same class for 7 years (and counting) and it's been a blast! Our friendship goes way back and so does our love of science. This is our second year doing a joint project and it has been the most
+            fun of all our years of science fair. If you have any questions, comments or concerns feel free to hit us up at any of our socials!
             <hr>
             <h4>Atif Mahmud</h4>
-            <p>Personal Email: atifmahmud101@gmail.com <br>School Email: mahma6337@googleapps.wrdsb.ca <br>Cell: (226)
-                606-9535</p>
+            <p>Personal Email: atifmahmud101@gmail.com <br>School Email: mahma6337@googleapps.wrdsb.ca <br>Cell: (226) 606-9535</p>
             <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/atif-mahmud/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
-                </li>
-                <li><a href="https://twitter.com/Atif_Mahmud101" class="icon fa-twitter"><span
-                        class="label">Twitter</span></a></li>
-                <li><a href="https://www.facebook.com/Atif.A.Mahmud" class="icon fa-facebook"><span class="label">Facebook</span></a>
-                </li>
-                <li><a href="https://www.instagram.com/Atif.A.Mahmud/" class="icon fa-instagram"><span class="label">Instagram</span></a>
-                </li>
-                <li><a href="https://github.com/Atif-Mahmud" class="icon fa-github"><span
-                        class="label">GitHub</span></a></li>
+                <li><a href="https://www.linkedin.com/in/atif-mahmud/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                <li><a href="https://twitter.com/Atif_Mahmud101" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/Atif.A.Mahmud" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/Atif.A.Mahmud/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="https://github.com/Atif-Mahmud" class="icon fa-github"><span class="label">GitHub</span></a></li>
             </ul>
             <h4>Zach Trefler</h4>
-            <p>Personal Email: zmct99@gmail.com <br>School Email: trefz7495@googleapps.wrdsb.ca <br>Cell: (226) 972-0492
-            </p>
+            <p>Personal Email: zmct99@gmail.com <br>School Email: trefz7495@googleapps.wrdsb.ca <br>Cell: (226) 972-0492</p>
             <ul class="icons">
-                <li><a href="https://www.facebook.com/zaki.tref" class="icon fa-facebook"><span
-                        class="label">Facebook</span></a></li>
+                <li><a href="https://www.facebook.com/zaki.tref" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
                 <li><a href="https://github.com/zmct" class="icon fa-github"><span class="label">GitHub</span></a></li>
             </ul>
         </article>
@@ -497,9 +395,7 @@
             <h2 class="major">HAB Prediction</h2>
             <hr>
             <h3>ALERT:</h3>
-            <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library
-                (Keras.js), which is used in NeurAlgae's frontend, dysfunctional. However, Keras.js is due for an update
-                in the coming weeks, so the service
+            <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js), which is used in NeurAlgae's frontend, dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service
                 will return shortly. Thank you for your patience.</p>
             <hr>
             <h3>Data Formatting:</h3>
@@ -515,7 +411,7 @@ NC: Concentration of nitrogen
 SL: Salinity
 TB: Turbidity
 
-Note all input values should be 32-bit floating point values 
+Note all input values should be 32-bit floating point values
 which correspond to the normalized value against highest and
 lowest possbile measurements.
 (ex. A chlorophyll concentration of 15% = 0.15)
@@ -578,8 +474,7 @@ For Example:
             <h2 class="major">Code</h2>
             <span class="image main"><img src="images/code.jpg" alt=""></span>
             <div style="text-align:center;">
-                <a href="http://www.github.com/FlowBoat" class="scrolly button special">Visit Our Github
-                    Repositories</a>
+                <a href="http://www.github.com/FlowBoat" class="scrolly button special">Visit Our Github Repositories</a>
             </div>
         </article>
 
@@ -589,23 +484,18 @@ For Example:
 
             <section>
                 <h3 class="major">Text</h3>
-                <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-                    This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u>
-                    and this is code:
+                <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u> and this is code:
                     <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-                <hr/>
+                <hr />
                 <h2>Heading Level 2</h2>
                 <h3>Heading Level 3</h3>
                 <h4>Heading Level 4</h4>
                 <h5>Heading Level 5</h5>
                 <h6>Heading Level 6</h6>
-                <hr/>
+                <hr />
                 <h4>Blockquote</h4>
-                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus
-                    euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-                    volutpat ac adipiscing accumsan faucibus. Vestibulum
-                    ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
-                </blockquote>
+                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum
+                    ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
                 <h4>Preformatted</h4>
                 <pre><code>i = 0;
 
@@ -783,11 +673,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 <form method="post" action="#">
                     <div class="field half first">
                         <label for="demo-name">Name</label>
-                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe"/>
+                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
                     </div>
                     <div class="field half">
                         <label for="demo-email">Email</label>
-                        <input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld"/>
+                        <input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
                     </div>
                     <div class="field">
                         <label for="demo-category">Category</label>
@@ -819,12 +709,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     </div>
                     <div class="field">
                         <label for="demo-message">Message</label>
-                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message"
-                                  rows="6"></textarea>
+                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
                     </div>
                     <ul class="actions">
-                        <li><input type="submit" value="Send Message" class="special"/></li>
-                        <li><input type="reset" value="Reset"/></li>
+                        <li><input type="submit" value="Send Message" class="special" /></li>
+                        <li><input type="reset" value="Reset" /></li>
                     </ul>
                 </form>
             </section>
@@ -846,8 +735,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 <div id="bg"></div>
 
 <!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.min.js"></script>
