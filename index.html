@@ -3,9 +3,9 @@
 
 <head>
     <title>NeurAlgae</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.11.4/math.min.js"></script>
     <script src="keras.js"></script>
@@ -121,7 +121,7 @@
 
         data = new Array
 
-        OneDay = function() {
+        OneDay = function () {
             data = document.getElementById('OneData').value
             document.getElementById("OneData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -132,26 +132,31 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA1.ready().then(() => {
+            CDA1.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PDA1.ready().then(() => {
+            PDA1.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PN1.ready().then(() => {
+            PN1.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            })
+            }
+        )
         }
 
-        ThreeDay = function(data) {
+        ThreeDay = function (data) {
             data = document.getElementById('ThreeData').value
             document.getElementById("ThreeData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -162,26 +167,31 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA3.ready().then(() => {
+            CDA3.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PDA3.ready().then(() => {
+            PDA3.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PN3.ready().then(() => {
+            PN3.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            })
+            }
+        )
         }
 
-        SevenDay = function(data) {
+        SevenDay = function (data) {
             data = document.getElementById('ThreeData').value
             document.getElementById("SevenData").innerHTML = "Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js) that is used in NeurAlgae's frontend dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service will return shortly. Thank you for your patience.";
 
@@ -192,214 +202,358 @@
                 console.log('Data formatted improperly, please refer to app home.')
             }
 
-            CDA7.ready().then(() => {
+            CDA7.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PDA7.ready().then(() => {
+            PDA7.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            });
+            }
+        )
+            ;
 
-            PN7.ready().then(() => {
+            PN7.ready().then(() = > {
                 const inputData = {
                     'input': new Float32Array(data)
                 }
-            })
+            }
+        )
         }
     </script>
-    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <!--[if lte IE 9]>
+    <link rel="stylesheet" href="assets/css/ie9.css"/><![endif]-->
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
 </head>
 
 <body>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-        <!-- Header -->
-        <header id="header">
-            <div class="logo">
-                <span class="icon fa-tint"></span>
+    <!-- Header -->
+    <header id="header">
+        <div class="content">
+            <div class="inner">
+                <h1 align="center">
+                    <br>
+                    <a href="#"><img src="https://i.imgur.com/x1OZ9UR.png" alt="NeurAlgae" width="200"></a>
+                    <br>
+                    NeurAlgae 3.0
+                    <br>
+                </h1>
+
+                <h4 align="center">A Novel Approach to Harmful Algal Bloom Prediction Using Artificial Neural
+                    Networks</h4>
+
+                <h5 align="center">By: Zach Trefler and Atif Mahmud</h5>
+
+                <p align="center">
+                    <img src="http://forthebadge.com/images/badges/made-with-python.svg" alt="">
+                    <img src="http://forthebadge.com/images/badges/powered-by-water.svg" alt="">
+                    <img src="http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg" alt="">
+                </p>
             </div>
-            <div class="content">
-                <div class="inner">
-                    <h1 style="font-family: 'Lato', sans-serif; text-transform: none;">NeurAlgae</h1>
-                    <p>
-                        <!--[-->A Novel Approach to Harmful Algal Bloom Prediction Using Machine Learning
-                        <!--]--><br />
-                        <!--[-->By Atif Mahmud and Zachary Trefler
-                        <!--]-->
-                    </p>
-                </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#intro">Intro</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#analysis">Analysis</a></li>
+                <li><a href="#app">App</a></li>
+                <li><a href="previous.html">Previous</a></li>
+                <li><a href="#contact">About</a></li>
+                <!--<li><a href="#elements">Elements</a></li>-->
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Intro -->
+        <article id="intro">
+            <h2 class="major">Background & Introduction</h2>
+            <p>Machine learning is a promising new way of solving complex multivariate problems. By training computers
+                to ‘learn’, complex problems may be modeled with often unprecedented accuracy. One such complex problem
+                is Harmful Algal Bloom (HAB) prediction. HABs are sudden, rapid overgrowths of algae that cause
+                significant damage to ecosystems all over the world. They have historically been both costly (in terms
+                of human and ecosystem health) (Anderson, Hoagland, Kaoru, & White, 2000) and difficult to predict. With
+                advance warning, however, human, ecological and economic costs can be substantially lowered. Some HABs
+                could potentially even be prevented. We propose a novel system, NeurAlgae, that takes remote sensing
+                data as input, and, using machine learning techniques, trains itself to accurately predict HABs in a
+                given area. Because of its accuracy, robustness, and computational affordability, NeurAlgae could play a
+                valuable role in maintaining ecosystem health and avoiding the great socioeconomic and ecological
+                devastation of HABs.</p>
+            <span class="image main"><img src="images/pic01.jpg" alt=""/></span>
+            <p>HABs are typically caused by the eutrophication of the ecosystem in which algae live. During a bloom, the
+                algal population is no longer limited by its nutrient supply, so it grows exponentially until other
+                factors become limiting. The sudden algal growth depletes the dissolved oxygen in the water, blocks
+                sunlight, and generally wreaks havoc on the ecosystem (Anderson, Glibert, & Burkholder, 2002). Many
+                algal blooms also create toxins as part of their metabolic processes, which can often harm or kill other
+                organisms in the vicinity, including humans. The damage caused by these blooms is enormous - globally,
+                the total monetary cost of HABs is estimated to be in the billions of dollars annually (Kudela et al.,
+                2015, p. 13), and “cyanobacterial toxins have caused human poisoning … there is accumulating evidence
+                that they are present in treated drinking water supplies when cyanobacterial blooms occur in source
+                waters” (Falconer & Humpage, 2004).</p>
+            <span class="image main"><img src="images/algae.jpg" alt=""/></span>
+            <p>Systems which can predict bloom outbreaks are thus extremely useful. If a HAB can be predicted given the
+                present state of an area of water, then affected areas can prepare for a possible HAB occurrence.
+                Measures taken might include setting up health-related precautions (dealing with possible toxins in the
+                water), for instance, or even deploying technologies that prevent a HAB from forming in the first place.
+                These measures are much more effective when deployed in advance, so it is very valuable to know where
+                and when a bloom is most likely to occur. However, according to Pellerin et al. (2016), although
+                real-time oceanographic monitoring systems measuring many of the variables relevant to HABs have
+                recently come online, early response efforts are restricted by the ability to analyze this data. To give
+                better analysis, and therefore more useful results, we propose a solution with a new machine learning
+                approach.</p>
+            <p>Machine learning is a computational problem-solving approach that tells computers what a solution should
+                look like, and lets them devise a method to reach one (Samuel, 1959, p. 535), rather than the
+                traditional approach of telling computers exactly how to solve a problem, which is more restrictive.
+                Machine learning approaches to problems have historically been infeasible, since they require
+                significant computational resources to search through many-dimensional spaces for an optimal solution.
+                However, as computers have become more and more powerful, machine learning solutions have become very
+                effective for certain types of problems, often dramatically outperforming traditional approaches,
+                especially on complex multivariate problems such as pattern recognition, where the scope of the problem
+                might be more than a human can easily reason about.</p>
+            <span class="image main"><img src="images/exnet.png" alt=""/></span>
+            <p>One particularly promising type of machine learning model is the Artificial Neural Network (ANN). ANNs
+                are loosely based on networks of neurons in animal brains: they work by propagating signals through
+                layers of nodes, all connected to each other, which each do operations on input signals to produce
+                output signals. The end result is a sophisticated model with many parameters, which can be optimized to
+                make the outputs correlate well with the expected values. ANNs have a wide variety of successful
+                applications, particularly to tasks involving complex patterns, and several variants increase accuracy
+                on specific tasks, such as Convolutional Neural Networks (CNNs), which use convolution to accurately
+                identify features in images, and Recurrent Neural Networks (RNNs) including Long Short-Term Memory
+                networks (LSTMs), which perform multiple calculations in sequence, passing the model’s current state
+                between each, allowing for analysis of data spread over a dimension such as time.
+            </p>
+            <span class="image main"><img src="images/lstm.png" alt=""/></span>
+        </article>
+
+        <!-- Design -->
+        <article id="vision">
+            <h2 class="major">The Vision</h2>
+            <h3>Purpose & Hypothesis</h3>
+            <p>NeurAlgae is a proposed system of ANNs which may improve upon existing systems by using new and
+                interesting machine learning techniques (defined in more detail in “Procedure”) in conjunction with a
+                large dataset of satellite images of Lake Erie to remotely predict HABs. The satellite dataset allows
+                for remote sensing, meaning no physical measurements must be taken in person to predict blooms - which
+                is very useful with a large area of water in which to make predictions on. With sufficient development
+                of the dataset and structuring of the network parameters, we aim for improved performance over
+                comparable prediction attempts, as well as sufficient generalization to other datasets to be useful
+                beyond the scope of our initial dataset. NeurAlgae also runs on the web, using the latest satellite
+                data, as a free and publicly available prediction service. If NeurAlgae meets success criteria, improved
+                HAB prediction, and therefore potential mitigation, will become immediately and freely available to any
+                community willing to try it.
+            </p>
+            <p>Are LSTM-based recurrent neural networks using our approach a competitive tool for the remote prediction
+                of harmful algal blooms? This is the question we attempt to answer with our research. We define
+                ‘competitive’ to mean a model whose performance is approximately equal to or better than most other
+                comparable approaches in the most important metrics. In this case, this would mean a model which
+                remotely predicts algal blooms with a reliability at least equal to most other remote-sensing and
+                prediction combination models using a similar dataset. Achieving an answer to this question is the main
+                goal of this project, since it determines whether or not our approach is valid (does it work?) and
+                meaningful (does it improve upon existing methods?).
+            </p>
+            <span class="grow image main"><img src="images/process.png" alt=""/></span>
+            <h3>Procedure</h3>
+            <p>
+                We first built a dataset to train our model. Using the Google Earth Engine API, we collected Landsat 7
+                and 8 Top-Of-Atmosphere (TOA) reflectance data over Lake Erie, taken from the launch of Landsat 8 to the
+                present. This data was then condensed to account for algal ‘fuzziness’ and to make the dataset size more
+                manageable. We then applied a mask over clouds in each image, to avoid their interfering with the model.
+                The TOA reflectance data was finally transformed into concentrations of chlorophyll-a (Chl-A) and
+                phycocyanin (PC), algal biovolume (AV), and secchi depth (SD) using statistically obtained empirical
+                correlations developed by Trescott (2012) and Torbick (2015). This produced four time series of maps of
+                algal data. These four datasets were then used to create the inputs for four parallel predictive models.
+            </p>
+            <p>Once the dataset was assembled, we then built neural network architectures. Each architecture processes
+                maps data in a time interval, and for each input, outputs the predicted state of the patch in the next
+                timestep, saving its internal state for the next input. After the inputs are all processed, the network
+                uses its saved state to continue to output predictions for a certain number of iterations. These
+                predictions were compared with the actual future data, and the error on each point in the data map was
+                used to train the model. Training occured on a larger sample of the dataset, but a significant portion
+                of data was reserved to test the models’ abilities to generalize.</p>
+            <p>
+                For each model type, we trained and tested numerous different versions, each involving the same basic
+                set of concepts that we have chosen to implement, but with different configurations of hyperparameters
+                (parameters of the model which do not change as a part of training). We compared the versions against
+                each other, as well as against other published models. The version with the best performance became the
+                final model of that type.
+            </p>
+            <p>
+                The final version of NeurAlgae was then made available on the Internet. We implemented the trained
+                models on a web backend, which users may interact with using an intuitive and accessible frontend. The
+                server downloads new satellite data, generates new predictions, and updates the frontend accordingly.
+                Users may view past actual data and predictions, as well as information about the project. Also freely
+                available (under the GNU GPL) on the web is the project source code and documentation, which can be used
+                to recreate our models or modified to train models on other datasets. In theory, the steps used to
+                produce our models could be replicated on any water region affected by HABs in the world.
+            </p>
+            <p>
+                Simply put, a neural network is a graph with weighted and directed edges where values are entered into a
+                fixed series of input nodes which are then propagated through the rest of the graph by setting the value
+                of each non-input node to a function of its upstream neighbors’ values and weights, creating a structure
+                similar to natural neural networks (Kleene, 1951). A subset of the non-input nodes are defined as the
+                network’s output, the values of which can be considered the outputs of a model described by a graph. The
+                model is improved, or ’trained’, by mathematically optimizing the weights of the graph to minimize the
+                error between the model’s output and a desired output for the given input. The optimization is often
+                done by calculating the gradient of the of the model’s error with respect to the weights and adjusting
+                the weights in the direction of the gradient vector, or some variation upon this method (our model makes
+                several of these variations).
+            </p>
+            <p>
+                In order to make meaningful improvements upon existing models, however, we employed a variety of
+                leading-edge machine learning concepts on top of the basic description above. Our model used recurrence
+                using LSTMs - a special form of node which saves state (recurrence), while keeping model gradients high
+                to improve learning rate (Hochreiter & Schmidhuber, 1997). LSTMs are used extensively in modern
+                time-series machine learning tasks, such as video and speech processing, but algal bloom prediction
+                remains a much less-thoroughly solved - and much more costly - problem. We used LSTMs to create a model
+                that quickly learns how to associate past data with future data. On a high level, our model examines the
+                permutation of algae on a given day and uses its understandings of the ecosystem to predict the movement
+                and growth patterns of the algae.
+            </p>
+            <p>
+                We further improved our model using a combination of adaptations in recent machine-learning techniques,
+                such as Nesterov momentum optimization (an improvement over traditional Stochastic Gradient Descent) to
+                increase training speed and accuracy. By performing efficient data manipulation, our implementation was
+                able to process large areas of the lake at once, allowing the model maximum context for predictions,
+                while keeping data resolution high. Dropout and L2 regularization were implemented to allow our model to
+                generalize to data not in the training set, effectively by penalizing unnecessary model complexity.
+                Model complexity, past a certain point, allows the model to ‘memorize’ parts of a dataset, creating
+                artificially high simulated performance, but very low effectiveness on new data. We therefore used the
+                machine-learning equivalent of Ockham’s Razor to allow for a more robust model.
+            </p>
+            <p>
+                Machine-learning models are very complex, so it is outside the small scope of this report to fully
+                describe the more intricate parameters used in training our models. In particular, the differences
+                between each trained version of the model require a much more detailed description of the NeurAlgae
+                system. Readers are encouraged to examine NeurAlgae online, where we provide thorough documentation, at
+                both the simple and technical level.
+            </p>
+        </article>
+
+        <!-- Analysis -->
+        <article id="analysis">
+            <h2 class="major">Analysis</h2>
+            <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
+            <h3>Results and analysis</h3>
+            <span class="image main"><img src="images/diff.png" alt=""/></span>
+            <p>In 2017, we made a preliminary version of NeurAlgae which used a much smaller dataset of a different
+                type, predicting pseudo-nitzchia blooms off the coast of southern California. While the project was
+                smaller in scope, and less advanced in implementation, it used many of the same core concepts to bloom
+                prediction. We compared this older version to the closest comparable model we found, by Zhang et al.
+                (2016), and found that our final model outperformed this by approximately one order of magnitude. This
+                suggests that our method represents a novel improvement in this area of machine learning. (Our 2017
+                results are available at flowboat.github.io/Flow-Tech-NeurAlgae-Base/). We used these encouraging
+                results as a base to create this new, and much more up-to-date, version of NeurAlgae.</p>
+            <p>This year’s version, NeurAlgae 3, is at this moment still going through the training process. Model
+                training is computationally very difficult: an optimization algorithm must search for a minimum error
+                through high-dimensional space of thousands or millions of parameters. We began the training process in
+                December, and we expect to continue revising, re-training, validating, and comparing models until at
+                least mid-April. The experimental stage of this project is therefore not complete, and we cannot provide
+                a thorough analysis of all of our progress. Due to the nature of machine learning, stopping model
+                learning part-way through is not an option, and all models must be trained equally and fully, to provide
+                a basis for meaningful comparison.</p>
+            <p>However, our progress to date has already surpassed standards for HAB prediction of this type. Our work
+                is now a matter of fully completing all the tests we set out to perform, thereby allowing a complete
+                final analysis and selection of our final four models to be made.</p>
+            <p>To provide a visual demonstration of our success, we present a comparison of sample chlorophyll-A and
+                phycocyanin concentrations, cyanobacteria biovolume, and secchi depth, overlayed across maps of a
+                portion lake Erie, in pairs corresponding to a week’s difference in time (Appendix A). Current results
+                indicate that predictions will be accurate up to several times this value (i.e., up to several weeks in
+                the future).</p>
+            <p>
+                Since NeurAlgae is trained by computing a cost function of the model’s output in relation to the inputs,
+                data analysis is, by definition, already done in large part by training the model. The data produced as
+                the model trains can be collected and analyzed. Analyses over the final results will include running
+                each model over the entire dataset to illustrate performance with respect to measurement time, as well
+                as finding the complete correlation between predicted and observed measurements. Separate analyses on
+                NeurAlgae’s performance on training and testing datasets will be made, to ensure that any overfitting is
+                easily visible and can be corrected as necessary. (To date, we have not observed any significant
+                training/testing cost divergence). The results of these final models will then be compared both to
+                real-world data, providing absolute testing of NeurAlgae, and to other predictive models, to examine the
+                efficacy of our model from a more relative standpoint.
+            </p>
+            <p>From where we stand today, NeurAlgae appears to indicate that machine learning offers a viable approach
+                to developing a robust HAB prediction tool using publicly available data. The possibilities offered not
+                only by NeurAlgae, but by further developments in machine-learning, would represent an extraordinarily
+                valuable application in itself, and one that offers intriguing possibilities for applying machine
+                learning to numerous real-world ecological challenges.</p>
+            <hr>
+            <div style="text-align:center;">
+                <a href="#appendicies" class="scrolly button special">Visit Appendicies</a>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#intro">Intro</a></li>
-                    <li><a href="#vision">Vision</a></li>
-                    <li><a href="#analysis">Analysis</a></li>
-                    <li><a href="#app">App</a></li>
-                    <li><a href="#code">Code</a></li>
-                    <li><a href="#contact">About</a></li>
-                    <!--<li><a href="#elements">Elements</a></li>-->
-                </ul>
-            </nav>
+            <hr>
+            <h3 id="appendicies">Appendicies</h3>
+            <h5>(Note that network preformance improves as one moves down)</h5>
+            <span class="image main"><img src="images/Chla_1.png" alt=""/></span>
+            <span class="image main"><img src="images/chla_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Phyco_1.png" alt=""/></span>
+            <span class="image main"><img src="images/Phyco_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Biovol_1.png" alt=""/></span>
+            <span class="image main"><img src="images/Biovol_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Secchi_2.png" alt=""/></span>
+            <span class="image main"><img src="images/Secchi_1.png" alt=""/></span>
+        </article>
 
-        </header>
+        <!-- Contact -->
+        <article id="contact">
+            <h2 class="major">About Us</h2>
+            <span class="image left"><img src="images/us.jpg" alt=""></span> Hi, in all the rush of Neural Networks and
+            their application in Algal Bloom prediction, we forgot to mention to you who we were! We're Atif and Zach,
+            partners, long-time
+            pals and best friends. We've been in the same class for 7 years (and counting) and it's been a blast! Our
+            friendship goes way back and so does our love of science. This is our second year doing a joint project and
+            it has been the most
+            fun of all our years of science fair. If you have any questions, comments or concerns feel free to hit us up
+            at any of our socials!
+            <hr>
+            <h4>Atif Mahmud</h4>
+            <p>Personal Email: atifmahmud101@gmail.com <br>School Email: mahma6337@googleapps.wrdsb.ca <br>Cell: (226)
+                606-9535</p>
+            <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/atif-mahmud/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a>
+                </li>
+                <li><a href="https://twitter.com/Atif_Mahmud101" class="icon fa-twitter"><span
+                        class="label">Twitter</span></a></li>
+                <li><a href="https://www.facebook.com/Atif.A.Mahmud" class="icon fa-facebook"><span class="label">Facebook</span></a>
+                </li>
+                <li><a href="https://www.instagram.com/Atif.A.Mahmud/" class="icon fa-instagram"><span class="label">Instagram</span></a>
+                </li>
+                <li><a href="https://github.com/Atif-Mahmud" class="icon fa-github"><span
+                        class="label">GitHub</span></a></li>
+            </ul>
+            <h4>Zach Trefler</h4>
+            <p>Personal Email: zmct99@gmail.com <br>School Email: trefz7495@googleapps.wrdsb.ca <br>Cell: (226) 972-0492
+            </p>
+            <ul class="icons">
+                <li><a href="https://www.facebook.com/zaki.tref" class="icon fa-facebook"><span
+                        class="label">Facebook</span></a></li>
+                <li><a href="https://github.com/zmct" class="icon fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </article>
 
-        <!-- Main -->
-        <div id="main">
-
-            <!-- Intro -->
-            <article id="intro">
-                <h2 class="major">Background & Introduction</h2>
-                <span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-                <p>Harmful algal blooms (HABs) are sudden, rapid overgrowths of algae that can damage coastal and lakeshore ecosystems, cause socioeconomic harm to areas dependent on them, and cause serious human health issues. HAB incidence has increased
-                    worldwide in recent decades, with escalating associated costs and damage. Accurately predicting HABs before they occur could significantly mitigate these costs; however they are dependent on complex interactions among many variable
-                    factors. We investigate whether an artificial neural network could yield accurate HAB predictions. NeurAlgae is a system of Artificial Neural Networks (ANNs) that uses nine measurements from real-time ocean monitoring stations taken
-                    at 15-minute intervals over three years to train its predictions. We used a first set of networks to expand our dataset, and then a second set of recurrent networks to generate more accurate predictions. We tested our system with a
-                    separate subset of the data to prevent overfitting. Our system produced predictions 10 times more accurate than the only comparable machine learning-based HAB prediction tool we were able to find in the scientific literature (Zhang
-                    et al. 2016). NeurAlgae thus constitutes a novel and robust tool for HAB prediction that demonstrates the utility of ANNs in approaching a complex multivariate problem with profound human and ecological consequences.</p>
-                <span class="image main"><img src="images/bloom.jpg" alt="" /></span>
-                <p>Algal blooms are incidences of sudden and rapid overgrowth in microscopic cyanobacteria and algae in water bodies, typically caused by eutrophication. Eutrophication is the overabundance of nutrients on which the algae feed. It is often
-                    caused by the presence of “urban and rural wastewater, fertilizers applied to agricultural fields, combustion of fossil fuels, erosion of soil containing nutrients and sewage treatment plant discharges” (Sanseverino, Conduto, Pozzoli,
-                    Dobricic, & Lettieri, 2016, p. 11). In some cases these blooms proliferate to the point where they harm the surrounding aquatic ecosystem (Anderson, Glibert, & Burkholder, 2002). These harmful algal blooms (HABs) can damage coastal
-                    and lakeshore ecosystems, cause socioeconomic harm to areas dependent on them, and injure human health (Anderson, Hoagland, Kaoru, & White, 2000). Algal blooms grow in sheets that can cover large areas, restricting sunlight to aquatic
-                    vegetation below. Once the bloom dies off, its decomposition depletes the dissolved oxygen in the water, creating hypoxic, or “dead,” zones (Fields, 2004). In addition, the metabolic processes of many saltwater species of algae, such
-                    as Pseudo-nitzschia, produce toxins capable of harming humans and animals (Anderson et al., 2002, p. 705).</p>
-                <span class="image main"><img src="images/algae.jpg" alt="" /></span>
-                <p>The prevalence of HABs is increasing; this is likely due to human causes, and a by-product of human activities (Sanseverino et al., 2016). According to Anderson et al. (2002), “virtually every coastal country is now threatened by multiple
-                    harmful or toxic algal species” (p. 706). Algal blooms grow rapidly; thus, although response mechanisms exist in some areas, remediation of the damage they cause is still very costly. Kudela et al. (2015) state that HABs conservatively
-                    cost several billion US dollars globally per year (p. 13). If a HAB could be predicted days or weeks in advance, remediation or even prevention could make the bloom far less costly.</p>
-                <p>The onset of HABs is difficult to predict, as they are dependent on a multitude of complex variables, including “algal species presence/abundance, degree of flushing or water exchange, weather conditions, and presence and abundance of
-                    grazers” (Anderson et al., 2002, p. 704). Although real-time oceanographic monitoring systems measuring many of these variables have recently come online, early response efforts are restricted by the ability to analyze this data (Pellerin
-                    et al., 2016). Prediction methods for algal blooms do exist, but generally suffer either from inaccuracy or over-specificity (i.e. are only useful in localized areas). We are unaware of any systems capable of accurately predicting
-                    HABs, which are still able to generalize to other datasets (can be used to predict blooms in areas other than those in their dataset). An accurate while simultaneously versatile system would be of enormous ecological and socioeconomic
-                    value.
-                </p>
-                <p>Given that HAB outbreaks are dependent on many factors whose interactions are very complicated, machine learning, denoting programs that behave in a way resembling human learning (Samuel 1959, p. 535), may be a candidate for providing
-                    a solution to this difficult problem. One attractive implementation of machine learning techniques is the Artificial Neural Network (ANN). ANNs are made up of mathematical operators which pass values through a synthetic network, similarly
-                    to how neurons parse information via electrical impulses (Kleene, 1951). To use an ANN for a machine learning problem, a model for the problem is generated, and the network makes correlations between given inputs and desired outputs
-                    by modifying its own parameters. In this way, computers are able to process and create relationships between data that might be incomprehensibly vast or complicated to humans.
-                </p>
-                <span class="image main"><img src="images/exnet.png" alt="" /></span>
-                <span class="image main"><img src="images/lstm.png" alt="" /></span>
-                <p>We propose the use of a system of ANNs to identify the direct relationships between the environmental factors affecting a body of water and the probability of a HAB occurring there. Some of the language used here to describe the NeurAlgae
-                    system is technical, so full explanations will be provided by the authors upon request.
-                </p>
-            </article>
-
-            <!-- Design -->
-            <article id="vision">
-                <h2 class="major">The Vision</h2>
-                <h3>Purpose & Hypothesis</h3>
-                <p>The purpose of the NeurAlgae system is to accurately predict HAB occurrences, while generalizing its operation to other datasets. Since the system is designed for any user, it should also be readily accessible and built into an intuitive
-                    interface.
-                </p>
-                <p>A neural network of adequate complexity, trained in a sufficient range of oceanographic data, will learn to accurately predict HABs based on these data. Such an ANN, combined with a user friendly interface, will allow for robust predictions
-                    and mitigation of HABs.
-                </p>
-                <span class="grow image main"><img src="images/process.png" alt="" /></span>
-                <h3>Procedure</h3>
-                <p>We developed NeurAlgae, a system of neural networks which aims to predict HAB occurrences in a given region using oceanographic data concerning that region. NeurAlgae parses nine separate water measurements (water surface level, pressure,
-                    chlorophyll concentration, temperature, electrical conductivity, oxygen and nitrate concentrations, salinity, and turbidity) taken at 15-minute intervals for three years. These measurements are correlated to three indicators of a HAB
-                    event: the probability of Pseudo-nitzschia diatoms being present in concentrations exceeding 10 000 cells per litre; the probability of the neurotoxin domoic acid (DA), being present within cells in concentrations exceeding 10 picograms
-                    per cell; and the probability of DA being present in the surrounding water in concentrations exceeding 500 nanograms per litre. The water measurements are first fed through three densely-connected ANNs of REctified Linear Units (RELUs)
-                    (with dropout and L2 regularization) trained to predict each of the three probabilities at the same time that the measurement is taken (a nowcast). The entire set of data points and correlated nowcast predictions are then fed through
-                    three more networks, each designed to make predictions for various future times. These networks took in sequential data using a Long Short-Term Memory (LSTM) layer. Combining separate neural network models allows for accurate predictions
-                    to be made on many parameters, without encountering potential training difficulties of training one large model, which the computer might not recognize as having multiple components. To enhance accessibility, a progressive web app
-                    (PWA) was created to host the NeurAlgae system. The web server can access and download data in real time, using a combination of client-side and server-side computation for fast and accurate results. The PWA combines the functionality
-                    of the NeurAlgae system with supplementary information to increase user understanding of the HAB issue and the NeurAlgae tool. Training data was taken from the Central and Northern California Ocean Observing System (CENCOOS) database,
-                    measured near Morro Bay, California. The source code for NeurAlgae is available at https://github.com/FlowBoat/Flow-Tech-NeurAlgae under the GNU GPL.
-                </p>
-
-            </article>
-
-            <!-- Analysis -->
-            <article id="analysis">
-                <h2 class="major">Analysis</h2>
-                <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
-                <h3>Results and analysis</h3>
-                <p>When validating our networks, our model performed optimally using 4 layers (including an LSTM layer or an additional dense RELU layer) in each network, dropout, and 0.0001 for the L2 regularization. We trained each model using the Nadam
-                    learning algorithm (Kingma and Ba, 2015), with the model’s mean squared error (MSE) for the cost function, which measures how well our model fits historical data. Our data consisted of ~35 000 data points taken from the CENCOOS water
-                    monitoring database, which was split into training and testing datasets. When the networks were trained, the training costs dropped to between 0.004 and 0.01, within 50 epochs. Note that results with some degree of noise should be
-                    expected, since biological outcomes are determined by far more parameters than the aforementioned nine. However, our model was able to achieve a MSE within 0.001-0.01 with only nine parameters - and the approach could be used to fit
-                    arbitrary datasets, so if more data became available, accuracy would increase correspondingly. Our models taking in smaller amounts of data achieved good generalization, but accuracy was limited by regularization. However, when models
-                    were given larger quantities of data, they achieved very accurate fits for consistent data, while still generalizing for noisy data, developing increasingly sophisticated models for extrapolating data. We discovered another machine-learning
-                    approach to the prediction of HABs: Zhang et al. (2016) created a predictive model for HAB prediction in the East China Sea using stacked layers of Boltzmann machines. When compared to their model, predicting different but closely
-                    correlated data, NeurAlgae achieved losses approximately ten times lower, a significant improvement, and with regularization methods to allow for improved generalization.</p>
-                <hr>
-                <div style="text-align:center;">
-                    <a href="#appendicies" class="scrolly button special">Visit Appendicies</a>
-                </div>
-                <hr>
-                <p>When given input data, the trained networks gave output values which were not exactly the same as the given algal bloom probabilities, but were in a close range - which is the optimal result for this problem, since the empirical data can
-                    vary so much, a fairly wide margin to account for differences is necessary in the model to prevent overfitting, and yet the model still is able to produce output data that is accurate enough to give a good idea of the algal bloom chances
-                    in that region.</p>
-                <h3>Conclusion</h3>
-                <p>The NeurAlgae system was demonstrated to accurately predict the probability of HABs. The model can form predictions up to one week in advance, giving authorities time to respond. The model’s accuracy increases as it is given more data,
-                    managing to stay general when the data is limited but fitting precisely given a larger dataset. Our model can be generalized to other datasets, given the use of the L2 regularization and dropout, and can use an arbitrarily expanded
-                    set of parameters to improve accuracy. Overall, the NeurAlgae system constitutes a novel and robust tool in the prediction of HABs, and demonstrates the applicability of ANNs in approaching a complex multivariate problem with profound
-                    human and ecological consequences.</p>
-                <h3>Next steps</h3>
-                <p>Although the likeliness of our training algorithm to improve from this point on is minimal; however, moving forward we look to imrpove the accessibiltiy of our webapp by eagerly awaiting, and immediately updating to the latest patch of
-                    Keras.js. Also, by implementing a node module like Synaptic.js or TensorFlow in the web, we will be able to train our network in realtime, with a constant stream of data from CENCOOS (or other databases). Currently our only limitations
-                    are our budget, and and the scope of our imaginations. If provided access to a dedicated server, the management of the NeurAlgae database and Neural network operation becomes much more stable. As of now a standard Firebase or Heroku
-                    deployment wouldn't fit our needs as data scientists. We hope to move towards a dedicated server soon, and with it a safer future for coastlines globally.
-                </p>
-                <h3>Acknowledgements</h3>
-                <p>Thank you to our parents for supporting our project throughout its development, and constantly allowing us the time to work on it. Thanks also to Mr. Menhennet, who provided guidance throughout the project on both formatting issues and
-                    geographical data.</p>
-                <h3 id="appendicies">Appendicies</h3>
-                <h5>(Note that network preformance improves as one moves down)</h5>
-                <span class="image main"><img src="images/MSEvE_0.png" alt="" /></span>
-                <span class="image main"><img src="images/POvT_0.png" alt="" /></span>
-                <span class="image main"><img src="images/MSEvE_15.png" alt="" /></span>
-                <span class="image main"><img src="images/POvT_15.png" alt="" /></span>
-                <span class="image main"><img src="images/MSEvE_1.png" alt="" /></span>
-                <span class="image main"><img src="images/POvT_1.png" alt="" /></span>
-                <span class="image main"><img src="images/MSEvE_3.png" alt="" /></span>
-                <span class="image main"><img src="images/POvT_3.png" alt="" /></span>
-                <span class="image main"><img src="images/MSEvE_7.png" alt="" /></span>
-                <span class="image main"><img src="images/POvT_7.png" alt="" /></span>
-            </article>
-
-            <!-- Contact -->
-            <article id="contact">
-                <h2 class="major">About Us</h2>
-                <span class="image left"><img src="images/us.jpg" alt=""></span> Hi, in all the rush of Neural Networks and their application in Algal Bloom prediction, we forgot to mention to you who we were! We're Atif and Zach, partners, long-time
-                pals and best friends. We've been in the same class for 7 years (and counting) and it's been a blast! Our friendship goes way back and so does our love of science. This is our second year doing a joint project and it has been the most
-                fun of all our years of science fair. If you have any questions, comments or concerns feel free to hit us up at any of our socials!
-                <hr>
-                <h4>Atif Mahmud</h4>
-                <p>Personal Email: atifmahmud101@gmail.com <br>School Email: mahma6337@googleapps.wrdsb.ca <br>Cell: (226) 606-9535</p>
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com/in/atif-mahmud/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://twitter.com/Atif_Mahmud101" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="https://www.facebook.com/Atif.A.Mahmud" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="https://www.instagram.com/Atif.A.Mahmud/" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                    <li><a href="https://github.com/Atif-Mahmud" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-                <h4>Zach Trefler</h4>
-                <p>Personal Email: zmct99@gmail.com <br>School Email: trefz7495@googleapps.wrdsb.ca <br>Cell: (226) 972-0492</p>
-                <ul class="icons">
-                    <li><a href="https://www.facebook.com/zaki.tref" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="https://github.com/zmct" class="icon fa-github"><span class="label">GitHub</span></a></li>
-                </ul>
-            </article>
-
-            <article id="app">
-                <h2 class="major">HAB Prediction</h2>
-                <hr>
-                <h3>ALERT:</h3>
-                <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library (Keras.js), which is used in NeurAlgae's frontend, dysfunctional. However, Keras.js is due for an update in the coming weeks, so the service
-                    will return shortly. Thank you for your patience.</p>
-                <hr>
-                <h3>Data Formatting:</h3>
-                <pre><code>
+        <article id="app">
+            <h2 class="major">HAB Prediction</h2>
+            <hr>
+            <h3>ALERT:</h3>
+            <p>Unfortunately, breaking changes in Keras 2.0 render the python to web model conversion library
+                (Keras.js), which is used in NeurAlgae's frontend, dysfunctional. However, Keras.js is due for an update
+                in the coming weeks, so the service
+                will return shortly. Thank you for your patience.</p>
+            <hr>
+            <h3>Data Formatting:</h3>
+            <pre><code>
 The following variables represent:
 WL: Water level above (or below) average sea level
 WP: Water pressure
@@ -424,80 +578,86 @@ For Example:
 .......(94 Data Points Later).......,
 [WL, WP, CC, TP, EC, OC, NC, SL, TB]]
                 </code></pre>
-                <div style="text-align: center;">
-                    <ul class="actions vertical">
-                        <li><a href="#1Day" class="button">1 Day Prediction</a></li>
-                        <li><a href="#3Day" class="button">3 Day Prediction</a></li>
-                        <li><a href="#7Day" class="button">7 Day Prediction</a></li>
-                    </ul>
-                </div>
-
-            </article>
-
-            <article id="1Day">
-                <h2 class="major">1 Day Prediction</h2>
-                <div class="field">
-                    <label for="OneData">Input Oceanographic Data Matrix</label>
-                    <textarea name="demo-message" id="OneData" placeholder="Enter your Matrix" rows="6"></textarea>
-                </div>
-                <hr>
-                <ul style="text-align: center;" class="actions">
-                    <li><a onclick="OneDay()" class="button special icon fa-download">Compute Probabilities</a></li>
+            <div style="text-align: center;">
+                <ul class="actions vertical">
+                    <li><a href="#1Day" class="button">1 Day Prediction</a></li>
+                    <li><a href="#3Day" class="button">3 Day Prediction</a></li>
+                    <li><a href="#7Day" class="button">7 Day Prediction</a></li>
                 </ul>
-            </article>
+            </div>
 
-            <article id="3Day">
-                <h2 class="major">3 Day Prediction</h2>
-                <div class="field">
-                    <label for="ThreeData">Input Oceanographic Data Matrix</label>
-                    <textarea name="demo-message" id="ThreeData" placeholder="Enter your Matrix" rows="6"></textarea>
-                </div>
-                <hr>
-                <ul style="text-align: center;" class="actions">
-                    <li><a onclick="ThreeDay()" class="button special icon fa-download">Compute Probabilities</a></li>
-                </ul>
-            </article>
+        </article>
 
-            <article id="7Day">
-                <h2 class="major">7 Day Prediction</h2>
-                <div class="field">
-                    <label for="SevenData">Input Oceanographic Data Matrix</label>
-                    <textarea name="demo-message" id="SevenData" placeholder="Enter your Matrix" rows="6"></textarea>
-                </div>
-                <hr>
-                <ul style="text-align: center;" class="actions">
-                    <li><a onclick="SevenDay()" class="button special icon fa-download">Compute Probabilities</a></li>
-                </ul>
-            </article>
+        <article id="1Day">
+            <h2 class="major">1 Day Prediction</h2>
+            <div class="field">
+                <label for="OneData">Input Oceanographic Data Matrix</label>
+                <textarea name="demo-message" id="OneData" placeholder="Enter your Matrix" rows="6"></textarea>
+            </div>
+            <hr>
+            <ul style="text-align: center;" class="actions">
+                <li><a onclick="OneDay()" class="button special icon fa-download">Compute Probabilities</a></li>
+            </ul>
+        </article>
 
-            <article id="code">
-                <h2 class="major">Code</h2>
-                <span class="image main"><img src="images/code.jpg" alt=""></span>
-                <div style="text-align:center;">
-                    <a href="http://www.github.com/FlowBoat" class="scrolly button special">Visit Our Github Repositories</a>
-                </div>
-            </article>
+        <article id="3Day">
+            <h2 class="major">3 Day Prediction</h2>
+            <div class="field">
+                <label for="ThreeData">Input Oceanographic Data Matrix</label>
+                <textarea name="demo-message" id="ThreeData" placeholder="Enter your Matrix" rows="6"></textarea>
+            </div>
+            <hr>
+            <ul style="text-align: center;" class="actions">
+                <li><a onclick="ThreeDay()" class="button special icon fa-download">Compute Probabilities</a></li>
+            </ul>
+        </article>
 
-            <!-- Elements -->
-            <article id="elements">
-                <h2 class="major">Elements</h2>
+        <article id="7Day">
+            <h2 class="major">7 Day Prediction</h2>
+            <div class="field">
+                <label for="SevenData">Input Oceanographic Data Matrix</label>
+                <textarea name="demo-message" id="SevenData" placeholder="Enter your Matrix" rows="6"></textarea>
+            </div>
+            <hr>
+            <ul style="text-align: center;" class="actions">
+                <li><a onclick="SevenDay()" class="button special icon fa-download">Compute Probabilities</a></li>
+            </ul>
+        </article>
 
-                <section>
-                    <h3 class="major">Text</h3>
-                    <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>. This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u> and this is code:
-                        <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-                    <hr />
-                    <h2>Heading Level 2</h2>
-                    <h3>Heading Level 3</h3>
-                    <h4>Heading Level 4</h4>
-                    <h5>Heading Level 5</h5>
-                    <h6>Heading Level 6</h6>
-                    <hr />
-                    <h4>Blockquote</h4>
-                    <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum
-                        ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-                    <h4>Preformatted</h4>
-                    <pre><code>i = 0;
+        <article id="code">
+            <h2 class="major">Code</h2>
+            <span class="image main"><img src="images/code.jpg" alt=""></span>
+            <div style="text-align:center;">
+                <a href="http://www.github.com/FlowBoat" class="scrolly button special">Visit Our Github
+                    Repositories</a>
+            </div>
+        </article>
+
+        <!-- Elements -->
+        <article id="elements">
+            <h2 class="major">Elements</h2>
+
+            <section>
+                <h3 class="major">Text</h3>
+                <p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+                    This is <sup>superscript</sup> text and this is <sub>subscript</sub> text. This is <u>underlined</u>
+                    and this is code:
+                    <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+                <hr/>
+                <h2>Heading Level 2</h2>
+                <h3>Heading Level 3</h3>
+                <h4>Heading Level 4</h4>
+                <h5>Heading Level 5</h5>
+                <h6>Heading Level 6</h6>
+                <hr/>
+                <h4>Blockquote</h4>
+                <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus
+                    euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
+                    volutpat ac adipiscing accumsan faucibus. Vestibulum
+                    ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.
+                </blockquote>
+                <h4>Preformatted</h4>
+                <pre><code>i = 0;
 
 while (!deck.isInOrder()) {
     print 'Iteration ' + i;
@@ -506,242 +666,244 @@ while (!deck.isInOrder()) {
 }
 
 print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-                </section>
+            </section>
 
-                <section>
-                    <h3 class="major">Lists</h3>
+            <section>
+                <h3 class="major">Lists</h3>
 
-                    <h4>Unordered</h4>
-                    <ul>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Sagittis adipiscing.</li>
-                        <li>Felis enim feugiat.</li>
-                    </ul>
+                <h4>Unordered</h4>
+                <ul>
+                    <li>Dolor pulvinar etiam.</li>
+                    <li>Sagittis adipiscing.</li>
+                    <li>Felis enim feugiat.</li>
+                </ul>
 
-                    <h4>Alternate</h4>
-                    <ul class="alt">
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Sagittis adipiscing.</li>
-                        <li>Felis enim feugiat.</li>
-                    </ul>
+                <h4>Alternate</h4>
+                <ul class="alt">
+                    <li>Dolor pulvinar etiam.</li>
+                    <li>Sagittis adipiscing.</li>
+                    <li>Felis enim feugiat.</li>
+                </ul>
 
-                    <h4>Ordered</h4>
-                    <ol>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Etiam vel felis viverra.</li>
-                        <li>Felis enim feugiat.</li>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Etiam vel felis lorem.</li>
-                        <li>Felis enim et feugiat.</li>
-                    </ol>
-                    <h4>Icons</h4>
-                    <ul class="icons">
-                        <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                        <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                        <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-                    </ul>
+                <h4>Ordered</h4>
+                <ol>
+                    <li>Dolor pulvinar etiam.</li>
+                    <li>Etiam vel felis viverra.</li>
+                    <li>Felis enim feugiat.</li>
+                    <li>Dolor pulvinar etiam.</li>
+                    <li>Etiam vel felis lorem.</li>
+                    <li>Felis enim et feugiat.</li>
+                </ol>
+                <h4>Icons</h4>
+                <ul class="icons">
+                    <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+                </ul>
 
-                    <h4>Actions</h4>
-                    <ul class="actions">
-                        <li><a href="#" class="button special">Default</a></li>
-                        <li><a href="#" class="button">Default</a></li>
-                    </ul>
-                    <ul class="actions vertical">
-                        <li><a href="#" class="button special">Default</a></li>
-                        <li><a href="#" class="button">Default</a></li>
-                    </ul>
-                </section>
+                <h4>Actions</h4>
+                <ul class="actions">
+                    <li><a href="#" class="button special">Default</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                </ul>
+                <ul class="actions vertical">
+                    <li><a href="#" class="button special">Default</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                </ul>
+            </section>
 
-                <section>
-                    <h3 class="major">Table</h3>
-                    <h4>Default</h4>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Item One</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Two</td>
-                                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Three</td>
-                                    <td> Morbi faucibus arcu accumsan lorem.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Four</td>
-                                    <td>Vitae integer tempus condimentum.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Five</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td>100.00</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+            <section>
+                <h3 class="major">Table</h3>
+                <h4>Default</h4>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Item One</td>
+                            <td>Ante turpis integer aliquet porttitor.</td>
+                            <td>29.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Two</td>
+                            <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                            <td>19.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Three</td>
+                            <td> Morbi faucibus arcu accumsan lorem.</td>
+                            <td>29.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Four</td>
+                            <td>Vitae integer tempus condimentum.</td>
+                            <td>19.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Five</td>
+                            <td>Ante turpis integer aliquet porttitor.</td>
+                            <td>29.99</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>100.00</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                <h4>Alternate</h4>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Item One</td>
+                            <td>Ante turpis integer aliquet porttitor.</td>
+                            <td>29.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Two</td>
+                            <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                            <td>19.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Three</td>
+                            <td> Morbi faucibus arcu accumsan lorem.</td>
+                            <td>29.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Four</td>
+                            <td>Vitae integer tempus condimentum.</td>
+                            <td>19.99</td>
+                        </tr>
+                        <tr>
+                            <td>Item Five</td>
+                            <td>Ante turpis integer aliquet porttitor.</td>
+                            <td>29.99</td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="2"></td>
+                            <td>100.00</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="major">Buttons</h3>
+                <ul class="actions">
+                    <li><a href="#" class="button special">Special</a></li>
+                    <li><a href="#" class="button">Default</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="#" class="button">Default</a></li>
+                    <li><a href="#" class="button small">Small</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><a href="#" class="button special icon fa-download">Icon</a></li>
+                    <li><a href="#" class="button icon fa-download">Icon</a></li>
+                </ul>
+                <ul class="actions">
+                    <li><span class="button special disabled">Disabled</span></li>
+                    <li><span class="button disabled">Disabled</span></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 class="major">Form</h3>
+                <form method="post" action="#">
+                    <div class="field half first">
+                        <label for="demo-name">Name</label>
+                        <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe"/>
                     </div>
-
-                    <h4>Alternate</h4>
-                    <div class="table-wrapper">
-                        <table class="alt">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Item One</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Two</td>
-                                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Three</td>
-                                    <td> Morbi faucibus arcu accumsan lorem.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Four</td>
-                                    <td>Vitae integer tempus condimentum.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Five</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td>100.00</td>
-                                </tr>
-                            </tfoot>
-                        </table>
+                    <div class="field half">
+                        <label for="demo-email">Email</label>
+                        <input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld"/>
                     </div>
-                </section>
-
-                <section>
-                    <h3 class="major">Buttons</h3>
+                    <div class="field">
+                        <label for="demo-category">Category</label>
+                        <div class="select-wrapper">
+                            <select name="demo-category" id="demo-category">
+                                <option value="">-</option>
+                                <option value="1">Manufacturing</option>
+                                <option value="1">Shipping</option>
+                                <option value="1">Administration</option>
+                                <option value="1">Human Resources</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field half first">
+                        <input type="radio" id="demo-priority-low" name="demo-priority" checked>
+                        <label for="demo-priority-low">Low</label>
+                    </div>
+                    <div class="field half">
+                        <input type="radio" id="demo-priority-high" name="demo-priority">
+                        <label for="demo-priority-high">High</label>
+                    </div>
+                    <div class="field half first">
+                        <input type="checkbox" id="demo-copy" name="demo-copy">
+                        <label for="demo-copy">Email me a copy</label>
+                    </div>
+                    <div class="field half">
+                        <input type="checkbox" id="demo-human" name="demo-human" checked>
+                        <label for="demo-human">Not a robot</label>
+                    </div>
+                    <div class="field">
+                        <label for="demo-message">Message</label>
+                        <textarea name="demo-message" id="demo-message" placeholder="Enter your message"
+                                  rows="6"></textarea>
+                    </div>
                     <ul class="actions">
-                        <li><a href="#" class="button special">Special</a></li>
-                        <li><a href="#" class="button">Default</a></li>
+                        <li><input type="submit" value="Send Message" class="special"/></li>
+                        <li><input type="reset" value="Reset"/></li>
                     </ul>
-                    <ul class="actions">
-                        <li><a href="#" class="button">Default</a></li>
-                        <li><a href="#" class="button small">Small</a></li>
-                    </ul>
-                    <ul class="actions">
-                        <li><a href="#" class="button special icon fa-download">Icon</a></li>
-                        <li><a href="#" class="button icon fa-download">Icon</a></li>
-                    </ul>
-                    <ul class="actions">
-                        <li><span class="button special disabled">Disabled</span></li>
-                        <li><span class="button disabled">Disabled</span></li>
-                    </ul>
-                </section>
+                </form>
+            </section>
 
-                <section>
-                    <h3 class="major">Form</h3>
-                    <form method="post" action="#">
-                        <div class="field half first">
-                            <label for="demo-name">Name</label>
-                            <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-                        </div>
-                        <div class="field half">
-                            <label for="demo-email">Email</label>
-                            <input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-                        </div>
-                        <div class="field">
-                            <label for="demo-category">Category</label>
-                            <div class="select-wrapper">
-                                <select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-                            </div>
-                        </div>
-                        <div class="field half first">
-                            <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                            <label for="demo-priority-low">Low</label>
-                        </div>
-                        <div class="field half">
-                            <input type="radio" id="demo-priority-high" name="demo-priority">
-                            <label for="demo-priority-high">High</label>
-                        </div>
-                        <div class="field half first">
-                            <input type="checkbox" id="demo-copy" name="demo-copy">
-                            <label for="demo-copy">Email me a copy</label>
-                        </div>
-                        <div class="field half">
-                            <input type="checkbox" id="demo-human" name="demo-human" checked>
-                            <label for="demo-human">Not a robot</label>
-                        </div>
-                        <div class="field">
-                            <label for="demo-message">Message</label>
-                            <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-                        </div>
-                        <ul class="actions">
-                            <li><input type="submit" value="Send Message" class="special" /></li>
-                            <li><input type="reset" value="Reset" /></li>
-                        </ul>
-                    </form>
-                </section>
-
-            </article>
-
-        </div>
-
-        <!-- Footer -->
-        <footer id="footer">
-            <p class="copyright">&copy; Atif Mahmud & Zachary Trefler. Design:
-                <a href="http://flowboat.github.io/FlowJoin">Visit.</a>
-            </p>
-        </footer>
+        </article>
 
     </div>
 
-    <!-- BG -->
-    <div id="bg"></div>
+    <!-- Footer -->
+    <footer id="footer">
+        <p class="copyright">&copy; Atif Mahmud & Zachary Trefler. Design:
+            <a href="http://flowboat.github.io/FlowJoin">Visit.</a>
+        </p>
+    </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+</div>
+
+<!-- BG -->
+<div id="bg"></div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/skel.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 
